@@ -8,8 +8,8 @@ const areas = [
 		number: '01',
 		label: 'WEBY · FE + BE',
 		title: 'API katalog a Schema Registry',
-		intro: 'Funkcionalitu nejdřív ověřím akceptačně. Potom důležité scénáře převedu do automatických AT testů a regrese.',
-		details: 'Na API katalogu pokrývám FE i BE: formuláře, stavy, validace, oprávnění, registraci a změny API. Backend Schema Registry testuji přes API tak, že scénáře vystupují jako klient a ověřují odpovědi i chybové stavy.',
+		intro: 'Funkcionalitu nejdřív ověřím akceptačně. AT testy a regresi stavím kolem scénářů, jejichž automatizace přináší hodnotu.',
+		details: 'Na API katalogu pokrývám FE i BE: formuláře, stavy, validace, oprávnění, registraci a změny API. Backend Schema Registry testuji přes API tak, že scénáře vystupují jako klient a ověřují odpovědi i chybové stavy. U E2E přes více systémů počítám s prostupy a bezpečnostními pravidly.',
 	},
 	{
 		id: 'ci-cd',
@@ -57,12 +57,13 @@ const areas = [
 
 			<section class="method">
 				<div>
-					<p class="eyebrow">U WEBŮ: OD ZMĚNY K REGRESI</p>
-					<h2>Nejdřív zjistit, jestli změna dává smysl. Pak hlídat, aby to tak zůstalo.</h2>
+					<p class="eyebrow">U WEBŮ: AUTOMATIZACE S ROZMYŠLEM</p>
+					<h2>Testovací úroveň volím podle rizika, opakovatelnosti a ceny údržby.</h2>
+					<p>E2E přes několik systémů přináší další práci s prostupy, oprávněními a bezpečností. Proto automatizuji cíleně.</p>
 				</div>
-				<div class="method-flow" aria-label="Akceptace, automatizované testy, regrese">
+				<div class="method-flow" aria-label="Akceptace, výběr automatizovaných testů, cílená regrese">
 					<span><b>01</b> Akceptace</span><i aria-hidden="true">→</i>
-					<span><b>02</b> AT scénáře</span><i aria-hidden="true">→</i>
+					<span><b>02</b> Vhodné AT</span><i aria-hidden="true">→</i>
 					<span><b>03</b> Regrese</span>
 				</div>
 			</section>
@@ -101,10 +102,12 @@ const areas = [
 	.method { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; margin-top: 2.5rem; padding: 2rem; background: #243b35; color: #fff; }
 	.method .eyebrow { color: #e4a986; }
 	.method h2 { max-width: 520px; margin: 0; font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -.04em; }
+	.method > div > p:last-child { max-width: 560px; margin: .8rem 0 0; color: #d3ddd7; font-size: .92rem; line-height: 1.6; }
 	.method-flow { display: grid; gap: .65rem; }
 	.method-flow span { display: flex; align-items: center; gap: .65rem; font-size: .85rem; font-weight: 700; }
 	.method-flow b { display: grid; width: 1.6rem; height: 1.6rem; place-items: center; border-radius: 50%; color: #243b35; background: #e4a986; font-size: .65rem; }
 	.method-flow i { margin-left: .8rem; color: #e4a986; font-size: .8rem; line-height: .3; }
+	.method-note { margin: 1rem 0 0; padding: .7rem .85rem; color: #59615d; background: #e9ece6; font-size: .78rem; line-height: 1.55; }
 	.deliverables { margin-top: 3rem; padding: 2.5rem; background: #e9ece6; }
 	.deliverables h2, .cta h2 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -.04em; }
 	.deliverable-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; }

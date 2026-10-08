@@ -29,24 +29,25 @@ import Footer from '../components/Footer.astro';
 			<section class="area" id="weby" aria-labelledby="web-title">
 				<div class="area-heading">
 					<p class="eyebrow">01 / WEBY · FE + BE</p>
-					<h2 id="web-title">Od akceptace k regresní jistotě.</h2>
+					<h2 id="web-title">Od akceptace k promyšlené regresi.</h2>
 					<p>U webových aplikací se potkávám hlavně s API katalogem a backendem Schema Registry. Frontend také nenechávám mimo záběr.</p>
 				</div>
 				<div class="area-grid">
 					<article class="detail-card">
 						<div class="card-kicker"><span class="status-dot"></span> API KATALOG · FE + BE</div>
 						<h3>Nejdřív ověřit změnu. Pak ji hlídat dál.</h3>
-						<p>Funkcionalitu ověřuji akceptačně — od toho, co vidí uživatel ve formuláři, po odpověď backendu. Když chování sedí, pokrývám ho AT scénáři a zařazuji do regrese.</p>
+						<p>Funkcionalitu ověřuji akceptačně — od toho, co vidí uživatel ve formuláři, po odpověď backendu. Do AT testů a regrese vybírám scénáře, u kterých automatizace přináší opakovanou hodnotu.</p>
 						<ul class="topic-list">
 							<li>Registrace, změny a verze API</li>
 							<li>Validace, kompatibilita a oprávnění</li>
 							<li>FE formuláře, vyhledávání a zobrazené stavy</li>
 						</ul>
-						<div class="mini-flow" aria-label="Akceptační testování, automatizované testy, regrese">
+						<div class="mini-flow" aria-label="Akceptační ověření, výběr automatizovaných testů, cílená regrese">
 							<span><b>01</b> Akceptace</span><i aria-hidden="true">→</i>
-							<span><b>02</b> AT</span><i aria-hidden="true">→</i>
+							<span><b>02</b> Vhodné AT</span><i aria-hidden="true">→</i>
 							<span><b>03</b> Regrese</span>
 						</div>
+						<p class="method-note">U E2E přes více systémů ověřuji také prostupy, oprávnění a bezpečnostní pravidla.</p>
 					</article>
 					<article class="detail-card">
 						<div class="card-kicker"><span class="status-dot status-blue"></span> SCHEMA REGISTRY · BE</div>
@@ -143,6 +144,7 @@ import Footer from '../components/Footer.astro';
 	.mini-flow span { display: flex; align-items: center; gap: .4rem; color: #34413c; font-size: .72rem; font-weight: 700; white-space: nowrap; }
 	.mini-flow b { display: grid; width: 1.35rem; height: 1.35rem; place-items: center; border-radius: 50%; color: #fff; background: #668b6d; font-size: .58rem; }
 	.mini-flow i { width: 100%; height: 1px; background: #c8d5ca; }
+	.method-note { margin: 1rem 0 0; padding: .7rem .85rem; color: #59615d; background: #e9ece6; font-size: .78rem; line-height: 1.55; }
 	.api-path { display: flex; align-items: center; gap: .5rem; margin-top: auto; padding-top: 1.3rem; color: #34413c; font-size: .7rem; font-weight: 700; }
 	.api-path span, .api-path b { padding: .5rem .65rem; border: 1px solid #d9ddd7; background: #f5f6f1; }
 	.api-path b { color: #fff; border-color: #668b8c; background: #668b8c; }
