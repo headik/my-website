@@ -1,0 +1,76 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="cs">
+	<head><BaseHead title={`Zkušenosti | ${SITE_TITLE}`} description="Anonymizované příklady z testování API platforem, integrací, tracingu a delivery pipeline." /></head>
+	<body>
+		<Header />
+		<main class="reference-page">
+			<header class="page-intro">
+				<p class="eyebrow">ZKUŠENOSTI Z PRAXE</p>
+				<h1>Konkrétní problémy.<br /><span>Bez interních jmenovek.</span></h1>
+				<p class="lead">Následující příklady jsou zobecněné podle oblastí, ve kterých pracuji. Jména systémů, prostředí i interní detaily zůstávají tam, kam patří: uvnitř firmy.</p>
+			</header>
+
+			<article class="case" id="api-platformy">
+				<div class="case-top"><span>01 / API PLATFORMY</span><span>API · OPENAPI · KOMPATIBILITA</span></div>
+				<h2>Když API cestuje přes pipeline do katalogu</h2>
+				<div class="case-columns">
+					<div><h3>Výzva</h3><p>Ověřit, že API vytvořené v navazujícím nástroji doputuje do katalogu včetně správných metadat, verzí a stavu — a že katalog neodsouhlasí nekompatibilní změnu jen proto, že o ni někdo hezky požádal.</p></div>
+					<div><h3>Co testuji</h3><p>Registraci z pipeline, validace vstupů, kompatibilitu vůči konzumentům, změny životního cyklu, ACL a návaznost mezi API, schématy, frontendem a backendem.</p></div>
+				</div>
+				<p class="case-note">Typ práce: funkční, integrační, AT a regresní testování.</p>
+			</article>
+
+			<article class="case" id="tracing">
+				<div class="case-top"><span>02 / INTEGRACE A TRACING</span><span>REST · SOAP · JAVA/.NET · MESSAGING</span></div>
+				<h2>Najít požadavek, který si udělal výlet přes šest služeb</h2>
+				<div class="case-columns">
+					<div><h3>Výzva</h3><p>Komunikace projde několika službami a protokoly. Když se ztratí kontext, chyba se špatně hledá a každý log vypráví trochu jiný příběh.</p></div>
+					<div><h3>Co testuji</h3><p>Volání REST a SOAP, chování Java/.NET SDK, messaging a integrační routy; ověřuji průchod trace ID, spanů a souvisejících tagů včetně kombinací W3C a B3 hlaviček.</p></div>
+				</div>
+				<p class="case-note">Typ práce: integrační, E2E a diagnostické testy observability.</p>
+			</article>
+
+			<article class="case" id="release">
+				<div class="case-top"><span>03 / DELIVERY A SPOLEHLIVOST</span><span>CI/CD · UAT · POST-DEPLOY · DR</span></div>
+				<h2>Po upgradu kontrolovat víc než to, jestli svítí pod</h2>
+				<div class="case-columns">
+					<div><h3>Výzva</h3><p>Vydání nové verze nebo přesun do jiného prostředí může změnit chování aplikace, závislostí i generovaných artefaktů. „Nasazeno“ není totéž co „ověřeno“.</p></div>
+					<div><h3>Co testuji</h3><p>Regresní sady po upgradech, end-to-end scénáře, post-deployment kontroly a připravenost testů pro UAT a disaster recovery. Výsledky patří do reportu, ne do věty „vypadá to dobře“.</p></div>
+				</div>
+				<p class="case-note">Typ práce: regresní, E2E, release a DR testování.</p>
+			</article>
+
+			<section class="cta"><div><p class="eyebrow">PODOBNÁ VÝZVA?</p><h2>Podíváme se na ni společně.</h2></div><a class="button" href="/kontakt/">Ozvat se Rostovi <span aria-hidden="true">↗</span></a></section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.reference-page { width: min(100% - 3rem, 1000px); max-width: none; padding-top: clamp(4rem, 9vw, 7rem); padding-bottom: 5rem; }
+	.eyebrow { color: #a05e39; font-size: .7rem; font-weight: 800; letter-spacing: .16em; }
+	.page-intro { max-width: 800px; margin-bottom: 3.5rem; }
+	h1 { font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1.02; letter-spacing: -.06em; }
+	h1 span { color: #a05e39; }
+	.lead { max-width: 700px; color: #59615d; font-size: 1.15rem; }
+	.case { padding: 2.2rem 0; border-top: 1px solid #d9ddd7; scroll-margin-top: 2rem; }
+	.case-top { display: flex; justify-content: space-between; gap: 1rem; color: #a05e39; font-size: .66rem; font-weight: 800; letter-spacing: .1em; }
+	.case h2 { max-width: 780px; margin: 1.2rem 0 1.5rem; font-size: clamp(1.65rem, 4vw, 2.5rem); letter-spacing: -.045em; }
+	.case-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+	.case-columns h3 { margin-bottom: .4rem; color: #243b35; font-size: .9rem; }
+	.case-columns p { margin: 0; color: #59615d; font-size: .95rem; line-height: 1.7; }
+	.case-note { margin: 1rem 0 0; color: #a05e39; font-size: .8rem; font-weight: 700; }
+	.cta { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; margin-top: 3rem; padding: 2rem; background: #f0e6df; }
+	.cta .eyebrow { margin-top: 0; }
+	.cta h2 { margin: 0; font-size: 1.8rem; letter-spacing: -.04em; }
+	.button { display: inline-flex; flex: 0 0 auto; gap: 1rem; padding: .85rem 1.2rem; color: #fff; background: #243b35; text-decoration: none; font-weight: 700; }
+	.button:hover { color: #fff; background: #36564d; }
+	@media (max-width: 650px) { .reference-page { width: min(100% - 2rem, 1000px); } .case-top { flex-direction: column; gap: .35rem; } .case-columns { grid-template-columns: 1fr; gap: 1.2rem; } .cta { align-items: flex-start; flex-direction: column; padding: 1.5rem; } }
+</style>

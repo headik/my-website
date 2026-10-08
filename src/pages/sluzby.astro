@@ -1,0 +1,73 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+
+const services = [
+	{ id: 'api', number: '01', title: 'API a schema registry', intro: 'Rozhraní bývá jednoduché. Dokud ho nezačne používat někdo další.', details: 'Ověřuji REST a SOAP API, OpenAPI kontrakty, registraci a validaci schémat, verzování, kompatibilitu i práci s chybami. Dívám se také na to, jak se API chová ve formuláři, backendu a navazujících systémech.' },
+	{ id: 'integrace', number: '02', title: 'Integrační testování', intro: 'Protože „tohle si předáváme správně“ je hypotéza, ne výsledek testu.', details: 'Testuji end-to-end komunikaci mezi službami a SDK v Java i .NET prostředí. V praxi se potkávám s REST, SOAP, Kafka, Artemis a integračními routami — včetně timeoutů, chybových stavů a nečekaných kombinací.' },
+	{ id: 'automatizace', number: '03', title: 'Automatizace a regresní sady', intro: 'Rutina patří automatům. Překvapení si nechme pro narozeniny.', details: 'Navrhuji a rozšiřuji AT, E2E a regresní scénáře. Pomáhám s jejich zapojením do CI/CD, s přepisem opakovaných manuálních kontrol do automatizace i s čitelným reportováním výsledků.' },
+	{ id: 'delivery', number: '04', title: 'Testování pipeline a releasů', intro: 'Build může být zelený. Otázka je, jestli dorazilo i to, co měl doručit.', details: 'Ověřuji generování a publikaci artefaktů, registraci API z delivery pipeline, validační chyby a post-deployment chování. Zkušenosti mám s regresním ověřováním změn při upgradech a v různých testovacích prostředích.' },
+	{ id: 'tracing', number: '05', title: 'Tracing a diagnostika integrací', intro: 'Když se požadavek ztratí po cestě, hledám jeho stopu.', details: 'Zaměřuji se na průchod trace ID, spanů a souvisejících tagů napříč službami. Ověřuji, jestli trasování odpovídá chování REST/SOAP volání i messagingu a jestli se z něj dá pochopit, kde nastal problém.' },
+	{ id: 'spolehlivost', number: '06', title: 'Upgrade, regresní a DR testy', intro: 'Velká změna si zaslouží víc než „na devu to nastartovalo“.', details: 'Provádím regresní a post-deployment kontroly při změnách verzí a prostředí. V evidenci mám také přípravu a exekuci scénářů pro UAT a disaster-recovery testy.' },
+];
+---
+
+<!doctype html>
+<html lang="cs">
+	<head><BaseHead title={`Služby | ${SITE_TITLE}`} description="Testování API a integrací, automatizace, CI/CD a tracing — služby Rostislava Šlechty." /></head>
+	<body>
+		<Header />
+		<main class="services-page">
+			<header class="page-intro">
+				<p class="eyebrow">SLUŽBY</p>
+				<h1>Najdu, kde se to rozchází.<br /><span>Ještě než se rozčílí uživatel.</span></h1>
+				<p class="lead">Testování navržené kolem skutečného toku systému: od požadavku a API přes integrační služby až po nasazení.</p>
+			</header>
+			<div class="service-list">
+				{services.map((service) => <article class="service-item" id={service.id}>
+					<div class="service-number">{service.number}</div>
+					<div><h2>{service.title}</h2><p class="intro">{service.intro}</p><p>{service.details}</p></div>
+				</article>)}
+			</div>
+			<section class="deliverables">
+				<p class="eyebrow">CO SI ODNESete</p>
+				<h2>Výsledek, se kterým se dá pracovat.</h2>
+				<div class="deliverable-grid">
+					<p><b>Scénáře</b><br />Co a proč má smysl ověřit.</p>
+					<p><b>Exekuci</b><br />Automaticky, ručně, nebo kombinací obojího.</p>
+					<p><b>Nálezy</b><br />Jasný popis, reprodukce a souvislosti.</p>
+					<p><b>Rozhodnutí</b><br />Co je pokryté a jaké riziko zbývá.</p>
+				</div>
+			</section>
+			<section class="cta"><div><p class="eyebrow">MÁTE KONKRÉTNÍ VÝZVU?</p><h2>Proberme ji dřív, než se z ní stane incident.</h2></div><a class="button" href="/kontakt/">Domluvit se <span aria-hidden="true">↗</span></a></section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.services-page { width: min(100% - 3rem, 1000px); max-width: none; padding-top: clamp(4rem, 9vw, 7rem); padding-bottom: 5rem; }
+	.eyebrow { color: #a05e39; font-size: .7rem; font-weight: 800; letter-spacing: .16em; }
+	.page-intro { max-width: 800px; margin-bottom: 4rem; }
+	h1 { font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1.02; letter-spacing: -.06em; }
+	h1 span { color: #a05e39; }
+	.lead { max-width: 680px; color: #59615d; font-size: 1.2rem; }
+	.service-item { display: grid; grid-template-columns: 75px 1fr; gap: 1.5rem; padding: 2rem 0; border-top: 1px solid #d9ddd7; scroll-margin-top: 2rem; }
+	.service-number { color: #a05e39; font-size: .8rem; font-weight: 800; letter-spacing: .1em; }
+	.service-item h2 { margin: -.4rem 0 .35rem; font-size: 1.55rem; letter-spacing: -.035em; }
+	.service-item p { max-width: 750px; margin: .4rem 0; color: #59615d; font-size: .98rem; }
+	.service-item .intro { color: #243b35; font-weight: 700; }
+	.deliverables { margin-top: 3rem; padding: 2.5rem; background: #e9ece6; }
+	.deliverables .eyebrow { margin-top: 0; }
+	.deliverables h2, .cta h2 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -.04em; }
+	.deliverable-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; }
+	.deliverable-grid p { margin: 0; color: #59615d; font-size: .88rem; line-height: 1.55; }
+	.deliverable-grid b { color: #243b35; }
+	.cta { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 3rem; padding: 2.5rem; background: #f0e6df; }
+	.cta .eyebrow { margin-top: 0; }
+	.button { display: inline-flex; flex: 0 0 auto; gap: 1rem; padding: .85rem 1.2rem; color: #fff; background: #243b35; text-decoration: none; font-weight: 700; }
+	.button:hover { color: white; background: #36564d; }
+	@media (max-width: 680px) { .services-page { width: min(100% - 2rem, 1000px); } .service-item { grid-template-columns: 42px 1fr; gap: 1rem; } .deliverables, .cta { padding: 1.6rem; } .deliverable-grid { grid-template-columns: repeat(2, 1fr); } .cta { align-items: flex-start; flex-direction: column; } }
+</style>

@@ -8,8 +8,10 @@ import { SITE_TITLE } from '../consts';
 		<h2><a href="/">{SITE_TITLE}<span aria-hidden="true">.</span></a></h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Úvod</HeaderLink>
-			<HeaderLink href="/blog/">Zápisky</HeaderLink>
+			<HeaderLink href="/sluzby/">Služby</HeaderLink>
+			<HeaderLink href="/reference/">Zkušenosti</HeaderLink>
 			<HeaderLink href="/about/">O mně</HeaderLink>
+			<HeaderLink href="/kontakt/">Kontakt</HeaderLink>
 		</div>
 	</nav>
 </header>
@@ -20,8 +22,8 @@ import { SITE_TITLE } from '../consts';
 	h2 { margin: 0; font-size: 1.15rem; letter-spacing: -.04em; }
 	h2 a { color: #243b35; text-decoration: none; }
 	h2 span { color: #a05e39; }
-	.internal-links { display: flex; gap: .5rem; }
+	.internal-links { display: flex; gap: .15rem; }
 	nav :global(a) { padding: 1rem .7rem; color: #34413c; text-decoration: none; border-bottom: 2px solid transparent; font-size: .95rem; }
 	nav :global(a.active) { border-bottom-color: #a05e39; }
-	@media (max-width: 480px) { header { padding: 0 1rem; } nav :global(a) { padding: .8rem .45rem; font-size: .88rem; } }
+	@media (max-width: 680px) { header { padding: 0 1rem; } nav { align-items: flex-start; flex-direction: column; } nav :global(a) { padding: .7rem .45rem; font-size: .88rem; } .internal-links { flex-wrap: wrap; margin-left: -.45rem; } }
 </style>

@@ -7,18 +7,21 @@ import { SITE_TITLE } from '../consts';
 
 <!doctype html>
 <html lang="cs">
-	<head><BaseHead title={`O mně | ${SITE_TITLE}`} description="Něco málo o mně, mém přístupu a tom, co zde najdeš." /></head>
+	<head><BaseHead title={`O mně | ${SITE_TITLE}`} description="Rostislav Rosta Šlechta — test engineer se zkušenostmi s API, integracemi a automatizací." /></head>
 	<body>
 		<Header />
-		<main>
-			<p class="eyebrow">PÁR SLOV NA ÚVOD</p>
-			<h1>Jsem Josef.<br /><span>A tohle je můj prostor.</span></h1>
-			<div class="prose">
-				<p class="lead">Věřím, že dobrá práce vzniká ze zvědavosti, otevřené komunikace a chuti dotahovat věci do konce.</p>
-				<p>Osobní web jsem si vytvořil jako místo, kde můžu představit, na čem pracuji, co se učím a jak přemýšlím. Bez složitých formulí — jednoduše a po svém.</p>
-				<h2>Co tu najdeš</h2>
-				<p>Postupně tu budu doplňovat projekty, zkušenosti a krátké texty k tématům, která mě zajímají. Pokud tě něco zaujme, budu rád, když se ozveš.</p>
-				<p class="signoff">Díky za návštěvu.<br /><strong>Josef</strong></p>
+		<main class="about-page">
+			<p class="eyebrow">O ČLOVĚKU ZA TESTY</p>
+			<h1>Rostislav <span>„Rosta“</span> Šlechta.</h1>
+			<div class="about-copy">
+				<p class="lead">Jsem test engineer ve významné bankovní společnosti. Pomáhám týmům vědět, co jejich systémy opravdu dělají — nejen co slibuje happy path.</p>
+				<p>V mé práci se potkávají API, integrační služby, automatizované testy a delivery pipeline. Jednou ověřuji, že se API správně zaregistruje. Podruhé pátrám, kam se ztratil trace ID. A někdy jen zkouším, co se stane, když pošlu něco, co nikdo neposlal od posledního incidentu.</p>
+				<h2>Jak přemýšlím o kvalitě</h2>
+				<p>Test pro mě není jen razítko „prošlo“. Je to způsob, jak týmu dát srozumitelnou odpověď: co jsme ověřili, co jsme našli a jaké riziko zbývá. Automatizaci používám tam, kde šetří opakovanou práci; explorativní testování tam, kde ještě nevíme, na co se zeptat.</p>
+				<div class="quote"><p>„Všechno funguje.“</p><span>Výborně. Teď zkusme zjistit, co přesně znamená „všechno“.</span></div>
+				<h2>Co je na webu záměrně anonymizované</h2>
+				<p>Příklady popisují typ práce a problémy, které řeším. Neuvádím názvy interních systémů, prostředí ani údaje o zaměstnavateli, klientech či produkčních incidentech.</p>
+				<a class="button" href="/kontakt/">Probrat spolupráci <span aria-hidden="true">↗</span></a>
 			</div>
 		</main>
 		<Footer />
@@ -26,14 +29,17 @@ import { SITE_TITLE } from '../consts';
 </html>
 
 <style>
-	main { padding-top: clamp(4rem, 10vw, 7rem); padding-bottom: 6rem; }
-	.eyebrow { color: #a05e39; font-size: .72rem; font-weight: 700; letter-spacing: .16em; }
-	h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); line-height: 1; letter-spacing: -.06em; }
+	.about-page { padding-top: clamp(4rem, 10vw, 7rem); padding-bottom: 6rem; }
+	.eyebrow { color: #a05e39; font-size: .72rem; font-weight: 800; letter-spacing: .16em; }
+	h1 { font-size: clamp(2.8rem, 7vw, 5.4rem); line-height: 1; letter-spacing: -.06em; }
 	h1 span { color: #a05e39; }
-	.prose { max-width: 680px; margin: 3rem 0 0; }
-	.prose p { color: #59615d; }
-	.prose .lead { color: #293b35; font-size: 1.35rem; line-height: 1.55; }
-	.prose h2 { margin-top: 2.5rem; font-size: 1.6rem; }
-	.signoff { margin-top: 3rem; }
-	.signoff strong { color: #243b35; font-size: 1.25rem; }
+	.about-copy { max-width: 690px; margin-top: 2.5rem; }
+	.about-copy p { color: #59615d; }
+	.about-copy .lead { color: #293b35; font-size: 1.3rem; line-height: 1.55; }
+	.about-copy h2 { margin: 2.7rem 0 .8rem; font-size: 1.55rem; }
+	.quote { margin: 2.3rem 0; padding: 1.5rem 1.8rem; border-left: 4px solid #a05e39; background: #f0e6df; }
+	.quote p { margin: 0 0 .3rem; color: #243b35; font-size: 1.3rem; font-weight: 700; }
+	.quote span { color: #68716c; font-size: .9rem; }
+	.button { display: inline-flex; gap: 1rem; padding: .85rem 1.2rem; color: white; background: #243b35; text-decoration: none; font-weight: 700; }
+	.button:hover { color: white; background: #36564d; }
 </style>
