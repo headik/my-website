@@ -5,9 +5,12 @@ import sitemap from "@astrojs/sitemap";
 
 import cloudflare from "@astrojs/cloudflare";
 
+const site = process.env.SITE_URL || process.env.CF_PAGES_URL;
+
 // https://astro.build/config
 export default defineConfig({
-	integrations: [mdx(), sitemap()],
+	...(site ? { site } : {}),
+	integrations: [mdx(), ...(site ? [sitemap()] : [])],
 	adapter: cloudflare({
 		platformProxy: {
 			enabled: true,
