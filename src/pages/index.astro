@@ -2,49 +2,79 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
 <html lang="cs">
-	<head><BaseHead title={`${SITE_TITLE} — test engineer`} description={SITE_DESCRIPTION} /></head>
+	<head><BaseHead title="Rosta Šlechta | Test engineer" description="Test engineer zaměřený na webové aplikace, CI/CD pipeline a Java/.NET SDK." /></head>
 	<body>
 		<Header />
 		<main class="home">
 			<section class="hero">
 				<div class="hero-copy">
-					<p class="eyebrow">TEST ENGINEER <span>·</span> API <span>·</span> INTEGRACE <span>·</span> AUTOMATIZACE</p>
-					<h1>Ahoj, jsem Rosťa.<br /><span>Bugy nerad nechávám na pondělí.</span></h1>
-					<p class="lead">Pomáhám týmům ověřit, že API, integrace i nasazení drží pohromadě — také když se zrovna mění tři věci najednou.</p>
+					<p class="eyebrow">TEST ENGINEER <span>·</span> WEBY <span>·</span> CI/CD <span>·</span> SDK</p>
+					<h1>Ahoj, jsem Rosťa.<br /><span>Testuji weby, CI/CD a SDK.</span></h1>
+					<p class="lead">Nejdřív ověřím, že změna dává smysl. Potom zařídím, aby ji automatická regrese příště poznala.</p>
 					<div class="actions">
-						<a class="button primary" href="/sluzby/">S čím pomůžu <span aria-hidden="true">↗</span></a>
-						<a class="text-link" href="/reference/">Příklady z praxe <span aria-hidden="true">→</span></a>
+						<a class="button primary" href="/reference/">Moje zkušenosti <span aria-hidden="true">↗</span></a>
+						<a class="text-link" href="/about/">Více o mně <span aria-hidden="true">→</span></a>
 					</div>
-					<p class="role-note">Test engineer v bankovní společnosti. Veřejně, srozumitelně a bez názvů interních systémů.</p>
+					<p class="role-note">Test engineer v bankovnictví · API katalogy · Java/.NET</p>
 				</div>
-				<div class="signal-card" aria-label="Co rád testuji">
-					<p class="signal-label">TESTOVACÍ REALITA</p>
-					<p class="signal-question">„Prošlo to.“</p>
+				<div class="signal-card" aria-label="Tři oblasti testování">
+					<p class="signal-label">TESTOVACÍ SMYČKA</p>
+					<p class="signal-question">„Hotovo?“</p>
 					<div class="signal-divider"><span></span><span></span><span></span></div>
-					<p class="signal-answer">Skvělé. A co když…?</p>
 					<ul>
-						<li><span>API</span><b>zkusí dostat nečekaný vstup</b></li>
-						<li><span>integrace</span><b>se potká s výpadkem</b></li>
-						<li><span>release</span><b>přijde v pátek</b></li>
+						<li><span>WEBY</span><b>akceptace → AT → regrese</b></li>
+						<li><span>CI/CD</span><b>build → validace → publikace</b></li>
+						<li><span>SDK</span><b>Java ↔ .NET</b></li>
 					</ul>
-					<div class="signal-stamp">TADY ZAČÍNÁ TEST</div>
+					<div class="signal-stamp">OVĚŘENO, NE ODHADNUTO</div>
 				</div>
 			</section>
 
-			<section class="services" aria-labelledby="services-title">
+			<section class="areas" aria-labelledby="areas-title">
 				<div class="section-heading">
-					<div><p class="eyebrow">CO DĚLÁM</p><h2 id="services-title">Kvalita od API až po produkci.</h2></div>
-					<a class="text-link" href="/sluzby/">Všechny služby <span aria-hidden="true">→</span></a>
+					<div><p class="eyebrow">TŘI HLAVNÍ OBLASTI</p><h2 id="areas-title">Kde trávím čas s testy.</h2></div>
+					<a class="text-link" href="/reference/">Příklady z praxe <span aria-hidden="true">→</span></a>
 				</div>
-				<div class="service-grid">
-					<article class="service-card"><span class="number">01</span><h3>API a schema registry</h3><p>Validace, verze, kompatibilita a chování API. I když se požadavek tváří, že je úplně normální.</p><a href="/sluzby/#api">Jak testuji API <span aria-hidden="true">↗</span></a></article>
-					<article class="service-card"><span class="number">02</span><h3>Automatizace a CI/CD</h3><p>AT, E2E a regresní sady zapojené do delivery. Zelený build je fajn. Zelený build, kterému rozumíme, ještě lepší.</p><a href="/sluzby/#automatizace">Jak automatizuji <span aria-hidden="true">↗</span></a></article>
-					<article class="service-card"><span class="number">03</span><h3>Integrace a tracing</h3><p>REST, SOAP, Java/.NET a messaging. Když se požadavek zatoulá, hledám jeho stopu napříč službami.</p><a href="/sluzby/#integrace">Jak hledám souvislosti <span aria-hidden="true">↗</span></a></article>
+				<div class="area-grid">
+					<article class="area-card">
+						<div class="area-top"><span class="area-number">01</span><span class="area-label">FE + BE</span></div>
+						<div class="area-graphic web-graphic" aria-hidden="true"><span>FE</span><i>↔</i><b>API</b><i>↔</i><span>BE</span></div>
+						<h3>Weby</h3>
+						<p>API katalog testuji od formuláře po backend. Schema Registry prověřuji na backendu přes API, jako by test byl klient.</p>
+						<a href="/reference/#weby">Akceptace → AT → regrese <span aria-hidden="true">↗</span></a>
+					</article>
+					<article class="area-card">
+						<div class="area-top"><span class="area-number">02</span><span class="area-label">DELIVERY</span></div>
+						<div class="area-graphic pipeline-graphic" aria-hidden="true"><span>BUILD</span><i></i><span>TEST</span><i></i><span>SHIP</span></div>
+						<h3>CI/CD pipeline</h3>
+						<p>Ověřuji, že pipeline připraví správný artefakt, zkontroluje ho a doručí tam, kam má. Zelená kontrolka je začátek, ne závěr.</p>
+						<a href="/reference/#ci-cd">Co testuji v pipeline <span aria-hidden="true">↗</span></a>
+					</article>
+					<article class="area-card">
+						<div class="area-top"><span class="area-number">03</span><span class="area-label">JAVA + .NET</span></div>
+						<div class="area-graphic sdk-graphic" aria-hidden="true"><span>Java</span><b>SDK</b><span>.NET</span></div>
+						<h3>Klientská SDK</h3>
+						<p>Testuji Java a .NET knihovny při volání REST, SOAP i messagingu — včetně chyb a trasování požadavků.</p>
+						<a href="/reference/#sdk">Jak testuji SDK <span aria-hidden="true">↗</span></a>
+					</article>
+				</div>
+				<p class="source-note"><span aria-hidden="true">✓</span> Přehled vychází z exportu reálných Jira stories a testovacích exekucí; interní názvy a citlivé detaily zůstávají skryté.</p>
+			</section>
+
+			<section class="method" aria-labelledby="method-title">
+				<div class="method-copy">
+					<p class="eyebrow">MŮJ PŘÍSTUP K WEBŮM</p>
+					<h2 id="method-title">Akceptovat. Zautomatizovat. Pohlídat v regresi.</h2>
+					<p>Funkcionalitu nejdřív ověřím jako celek. Potom důležité chování zachytím v AT scénářích, aby opakované ověřování nebylo pokaždé ruční detektivka.</p>
+				</div>
+				<div class="method-flow" aria-label="Akceptace, automatizované testy, regrese">
+					<span><b>01</b> Akceptace</span><i aria-hidden="true">→</i>
+					<span><b>02</b> AT testy</span><i aria-hidden="true">→</i>
+					<span><b>03</b> Regrese</span>
 				</div>
 			</section>
 
@@ -59,7 +89,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 						<div class="tags"><span>Mocha</span><span>Playwright</span><span>Postman</span><span>Bruno</span><span>JMeter</span></div>
 					</article>
 					<article class="tool-card">
-						<p class="tool-label">KORPORÁTNÍ TROJBOJ</p>
+						<p class="tool-label">KORPORÁTNÍ REALITA</p>
 						<div class="tags"><span>Jira</span><span>Confluence</span><span>Grafana</span></div>
 					</article>
 					<article class="tool-card ai-card">
@@ -70,19 +100,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 			</section>
 
-			<section class="work" aria-labelledby="work-title">
-				<div class="section-heading">
-					<div><p class="eyebrow">VÝBĚR Z PRAXE</p><h2 id="work-title">S čím už jsem si hrál.</h2></div>
-					<a class="text-link" href="/reference/">Všechny příklady <span aria-hidden="true">→</span></a>
-				</div>
-				<div class="work-grid">
-					<article class="work-card work-dark"><p class="work-type">API PLATFORMY</p><h3>Katalog, který ví, co v něm bydlí.</h3><p>Testování registrace API a schémat, verzování, kompatibility, validací i rolí uživatelů — napříč frontendem, backendem a pipeline.</p><a href="/reference/#api-platformy">Rozbalit příklad <span aria-hidden="true">↗</span></a></article>
-					<article class="work-card work-light"><p class="work-type">INTEGRACE A TRACING</p><h3>Stopa, která nekončí u prvního mikroservisu.</h3><p>Ověřování REST/SOAP volání, Java a .NET SDK i přenosu trace ID a spanů přes navazující služby.</p><a href="/reference/#tracing">Rozbalit příklad <span aria-hidden="true">↗</span></a></article>
-				</div>
-			</section>
-
 			<section class="closing">
-				<div><p class="eyebrow">NEJEN „U MĚ TO FUNGUJE“</p><h2>Chcete vědět, co se stane, když to fungovat přestane?</h2></div>
+				<div><p class="eyebrow">HLEDÁTE TEST ENGINEERA?</p><h2>Proberme, kde by se vám hodila další sada očí.</h2></div>
 				<a class="button secondary" href="/kontakt/">Napište mi <span aria-hidden="true">↗</span></a>
 			</section>
 		</main>
@@ -92,10 +111,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <style>
 	.home { width: min(100% - 3rem, 1100px); max-width: none; padding: 0 0 5rem; }
-	.hero { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(270px, .75fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); padding: clamp(4rem, 9vw, 7.5rem) 0 6.5rem; }
+	.hero { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(270px, .75fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); padding: clamp(4rem, 9vw, 7.5rem) 0 5rem; }
 	.eyebrow { margin: 0 0 1rem; color: #a05e39; font-size: .7rem; font-weight: 800; letter-spacing: .15em; }
 	.eyebrow span { color: #9ba59e; }
-	h1 { max-width: 800px; margin: 0; font-size: clamp(3rem, 6.5vw, 5.8rem); line-height: .99; letter-spacing: -.065em; }
+	h1 { max-width: 800px; margin: 0; font-size: clamp(3rem, 6.5vw, 5.5rem); line-height: .99; letter-spacing: -.065em; }
 	h1 span { color: #a05e39; }
 	.lead { max-width: 640px; margin: 1.7rem 0 0; color: #59615d; font-size: clamp(1.1rem, 2vw, 1.3rem); line-height: 1.65; }
 	.actions { display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap; margin-top: 2rem; }
@@ -104,53 +123,61 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.primary:hover { color: #fff; background: #36564d; }
 	.text-link { color: #243b35; font-size: .95rem; font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: .25em; }
 	.role-note { margin: 2rem 0 0; color: #79817d; font-size: .82rem; }
-	.signal-card { position: relative; padding: 1.7rem; border: 1px solid #d7ddd5; background: #fffefa; box-shadow: 12px 12px 0 #e9ece6; transform: rotate(1.2deg); }
-	.signal-label, .work-type { color: #a05e39; font-size: .65rem; font-weight: 800; letter-spacing: .14em; }
-	.signal-question { margin: 1.3rem 0 .6rem; color: #243b35; font-size: 1.65rem; font-weight: 700; letter-spacing: -.04em; }
-	.signal-divider { display: flex; gap: .3rem; margin: 1.2rem 0; }
+	.signal-card { position: relative; padding: 1.7rem; border: 1px solid #d7ddd5; background: #fffefa; box-shadow: 12px 12px 0 #e9ece6; transform: rotate(1deg); }
+	.signal-label, .area-label, .tool-label { color: #a05e39; font-size: .65rem; font-weight: 800; letter-spacing: .14em; }
+	.signal-question { margin: 1.2rem 0 .6rem; color: #243b35; font-size: 1.65rem; font-weight: 700; letter-spacing: -.04em; }
+	.signal-divider { display: flex; gap: .3rem; margin: 1.1rem 0; }
 	.signal-divider span { width: 22px; height: 4px; background: #d7ddd5; }
 	.signal-divider span:first-child { background: #a05e39; }
-	.signal-answer { margin: 0 0 1rem; color: #a05e39; font-size: 1.25rem; font-weight: 700; }
 	.signal-card ul { padding: 0; margin: 0; list-style: none; }
-	.signal-card li { display: flex; justify-content: space-between; gap: .8rem; padding: .55rem 0; border-top: 1px solid #eceee9; font-size: .76rem; }
-	.signal-card li span { color: #243b35; font-weight: 700; }
-	.signal-card li b { color: #78807b; font-weight: 400; text-align: right; }
-	.signal-stamp { display: inline-block; margin-top: 1rem; padding: .35rem .55rem; border: 1px solid #d8a48c; color: #a05e39; font-size: .6rem; font-weight: 800; letter-spacing: .12em; transform: rotate(-2deg); }
-	.services, .toolkit, .work { padding: 4.5rem 0; border-top: 1px solid #d9ddd7; }
+	.signal-card li { display: flex; justify-content: space-between; gap: .8rem; padding: .65rem 0; border-top: 1px solid #eceee9; font-size: .7rem; }
+	.signal-card li span { color: #243b35; font-size: .62rem; font-weight: 800; letter-spacing: .08em; }
+	.signal-card li b { color: #78807b; font-weight: 500; text-align: right; }
+	.signal-stamp { display: inline-block; margin-top: 1rem; padding: .35rem .55rem; border: 1px solid #d8a48c; color: #a05e39; font-size: .58rem; font-weight: 800; letter-spacing: .12em; transform: rotate(-2deg); }
+	.areas, .toolkit { padding: 4.5rem 0; border-top: 1px solid #d9ddd7; }
 	.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 1rem; }
 	.section-heading .eyebrow { margin-bottom: .7rem; }
-	.section-heading h2, .closing h2 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -.045em; }
+	.section-heading h2, .method h2, .closing h2 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -.045em; }
 	.section-heading > a { margin-bottom: .35rem; white-space: nowrap; }
-	.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.2rem; }
-	.service-card { padding: 1.5rem; border: 1px solid #d9ddd7; background: rgba(255,255,255,.6); }
-	.number { color: #a05e39; font-size: .72rem; font-weight: 800; letter-spacing: .12em; }
-	.service-card h3 { margin: 1.4rem 0 .6rem; font-size: 1.25rem; }
-	.service-card p, .work-card > p:not(.work-type) { color: #626b66; font-size: .95rem; line-height: 1.65; }
-	.service-card a, .work-card a { display: inline-block; margin-top: .4rem; color: #243b35; font-size: .87rem; font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+	.area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+	.area-card { display: flex; min-height: 330px; flex-direction: column; padding: 1.4rem; border: 1px solid #d9ddd7; background: rgba(255,255,255,.62); }
+	.area-top { display: flex; justify-content: space-between; align-items: center; }
+	.area-number { color: #a05e39; font-size: .72rem; font-weight: 800; letter-spacing: .12em; }
+	.area-graphic { display: flex; min-height: 65px; align-items: center; justify-content: center; gap: .5rem; margin: 1rem 0 .4rem; }
+	.area-graphic span, .area-graphic b { padding: .4rem .55rem; border: 1px solid #d7ddd5; color: #34413c; background: #f7f8f4; font-size: .65rem; font-weight: 800; letter-spacing: .06em; }
+	.area-graphic b { color: #fff; border-color: #668b8c; background: #668b8c; }
+	.area-graphic i { color: #a05e39; font-size: .8rem; font-style: normal; }
+	.pipeline-graphic { gap: .35rem; }
+	.pipeline-graphic span { border: 0; background: #e9ece6; font-size: .56rem; }
+	.pipeline-graphic i { width: 22px; height: 1px; background: #b8c5bb; }
+	.sdk-graphic span:last-child { border-color: #668b8c; background: #e7efed; }
+	.area-card h3 { margin: .5rem 0 .5rem; color: #243b35; font-size: 1.35rem; letter-spacing: -.03em; }
+	.area-card p { margin: 0 0 1.1rem; color: #626b66; font-size: .9rem; line-height: 1.65; }
+	.area-card a { margin-top: auto; color: #243b35; font-size: .82rem; font-weight: 700; text-underline-offset: .2em; }
+	.source-note { display: flex; gap: .65rem; align-items: center; margin: 1.2rem 0 0; color: #737d76; font-size: .78rem; line-height: 1.5; }
+	.source-note span { display: grid; width: 1.2rem; height: 1.2rem; flex: 0 0 auto; place-items: center; border: 1px solid #a7b6a9; border-radius: 50%; color: #668b6d; font-size: .65rem; font-weight: 800; }
+	.method { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 2rem; color: #fff; background: #243b35; }
+	.method .eyebrow { color: #e4a986; }
+	.method h2 { max-width: 650px; }
+	.method-copy > p:last-child { max-width: 650px; margin: 1rem 0 0; color: #d3ddd7; font-size: .92rem; line-height: 1.65; }
+	.method-flow { display: grid; gap: .65rem; }
+	.method-flow span { display: flex; align-items: center; gap: .65rem; font-size: .82rem; font-weight: 700; white-space: nowrap; }
+	.method-flow b { display: grid; width: 1.6rem; height: 1.6rem; place-items: center; border-radius: 50%; color: #243b35; background: #e4a986; font-size: .62rem; }
+	.method-flow i { margin-left: .75rem; color: #e4a986; font-size: .75rem; line-height: .3; }
 	.toolkit-heading { max-width: 650px; }
 	.toolkit-heading .eyebrow { margin-bottom: .7rem; }
 	.toolkit-heading h2 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -.045em; }
 	.toolkit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
 	.tool-card { min-height: 150px; padding: 1.4rem; border: 1px solid #d9ddd7; background: rgba(255,255,255,.6); }
-	.tool-label { margin: 0 0 1rem; color: #a05e39; font-size: .65rem; font-weight: 800; letter-spacing: .13em; }
+	.tool-label { margin: 0 0 1rem; }
 	.tags { display: flex; flex-wrap: wrap; gap: .45rem; }
 	.tags span { padding: .3rem .55rem; border-radius: 2px; color: #34413c; background: #e9ece6; font-size: .78rem; font-weight: 700; }
 	.ai-card h3 { margin: 0 0 .5rem; color: #243b35; font-size: 1.2rem; }
 	.ai-card > p:last-child { margin: 0; color: #626b66; font-size: .86rem; line-height: 1.55; }
-	.work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.2rem; }
-	.work-card { min-height: 260px; padding: clamp(1.5rem, 4vw, 2.5rem); }
-	.work-card .work-type { margin-top: 0; }
-	.work-card h3 { max-width: 460px; margin: 1.2rem 0 .8rem; font-size: clamp(1.45rem, 3vw, 2rem); letter-spacing: -.035em; }
-	.work-dark { color: #f7f7f3; background: #243b35; }
-	.work-dark .work-type { color: #e4a986; }
-	.work-dark > p:not(.work-type) { color: #d3ddd7; }
-	.work-dark a { color: #fff; }
-	.work-light { background: #e9ece6; }
 	.closing { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: clamp(2rem, 5vw, 3.5rem); background: #f0e6df; }
-	.closing h2 { max-width: 660px; }
+	.closing .eyebrow { color: #a05e39; }
 	.secondary { flex: 0 0 auto; color: #fff; background: #a05e39; }
 	.secondary:hover { color: #fff; background: #814a2e; }
-	@media (max-width: 800px) { .hero { grid-template-columns: 1fr; } .signal-card { max-width: 390px; margin: 0 auto; } }
-	@media (max-width: 800px) { .toolkit-grid { grid-template-columns: 1fr 1fr; } .ai-card { grid-column: 1 / -1; } }
-	@media (max-width: 650px) { .home { width: min(100% - 2rem, 1100px); padding-bottom: 3rem; } .hero { padding: 4rem 0 4.5rem; } .service-grid, .work-grid, .toolkit-grid { grid-template-columns: 1fr; } .ai-card { grid-column: auto; } .section-heading { display: block; } .section-heading > a { display: inline-block; margin-top: 1rem; } .closing { align-items: flex-start; flex-direction: column; } }
+	@media (max-width: 850px) { .hero { grid-template-columns: 1fr; } .signal-card { max-width: 430px; margin: 0 auto; transform: rotate(.4deg); } .area-grid { grid-template-columns: 1fr 1fr; } .area-card:last-child { grid-column: 1 / -1; min-height: 270px; } .method { grid-template-columns: 1fr; } .method-flow { display: flex; align-items: center; flex-wrap: wrap; gap: .55rem; } .method-flow i { margin-left: 0; } }
+	@media (max-width: 650px) { .home { width: min(100% - 2rem, 1100px); padding-bottom: 3rem; } .hero { padding: 4rem 0; } .area-grid, .toolkit-grid { grid-template-columns: 1fr; } .area-card:last-child { grid-column: auto; min-height: 300px; } .section-heading { display: block; } .section-heading > a { display: inline-block; margin-top: 1rem; } .method { padding: 1.5rem; } .toolkit, .areas { padding: 3.5rem 0; } .closing { align-items: flex-start; flex-direction: column; } }
 </style>
