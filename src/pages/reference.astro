@@ -8,55 +8,55 @@ import Footer from '../components/Footer.astro';
 <html lang="cs">
 	<head>
 		<BaseHead
-			title="Oblasti zkušeností | Rosta Šlechta"
-			description="Tři hlavní oblasti testování Rostislava Šlechty: webové aplikace, CI/CD pipeline a Java/.NET SDK."
+			title="Zkušenosti z praxe | Rosta Šlechta"
+			description="Zkušenosti Rostislava Šlechty s testováním webových aplikací, CI/CD pipeline a Java/.NET SDK."
 		/>
 	</head>
 	<body>
 		<Header />
 		<main class="reference-page">
 			<header class="page-intro">
-				<p class="eyebrow">TESTOVÁNÍ V PRAXI</p>
-				<h1>Tři oblasti.<br /><span>Jedna testovací logika.</span></h1>
-				<p class="lead">Webové aplikace, CI/CD pipeline a SDK pro Javu i .NET. Tady je přehled, na čem pracuji a jak nad testováním přemýšlím.</p>
+				<p class="eyebrow">ODBORNÉ ZKUŠENOSTI</p>
+				<h1>Webové aplikace,<br /><span>CI/CD pipeline a SDK.</span></h1>
+				<p class="lead">Popisuji hlavní oblasti své testovací praxe a typy scénářů, se kterými pracuji.</p>
 			</header>
 
 			<aside class="source-note">
 				<span aria-hidden="true">✓</span>
-				<p><strong>Vycházím ze skutečné práce.</strong> Oblasti a příklady jsem sestavil z exportu vlastních Jira stories a testovacích exekucí. Interní názvy systémů, prostředí a citlivé detaily zůstávají soukromé.</p>
+				<p><strong>Příklady vycházejí z reálné práce.</strong> Vycházím z exportu svých Jira úkolů a testovacích exekucí. Interní názvy systémů a prostředí jsem vynechal.</p>
 			</aside>
 
 			<section class="area" id="weby" aria-labelledby="web-title">
 				<div class="area-heading">
-					<p class="eyebrow">01 / WEBY · FE + BE</p>
-					<h2 id="web-title">Od akceptace k promyšlené regresi.</h2>
-					<p>U webových aplikací se potkávám hlavně s API katalogem a backendem Schema Registry. Frontend také nenechávám mimo záběr.</p>
+					<p class="eyebrow">01 / WEBOVÉ APLIKACE · FE + BE</p>
+					<h2 id="web-title">API katalog a Schema Registry</h2>
+					<p>API katalog testuji ve frontendové i backendové části. Schema Registry testuji na backendu prostřednictvím API.</p>
 				</div>
 				<div class="area-grid">
 					<article class="detail-card">
 						<div class="card-kicker"><span class="status-dot"></span> API KATALOG · FE + BE</div>
-						<h3>Nejdřív ověřit změnu. Pak ji hlídat dál.</h3>
-						<p>Funkcionalitu ověřuji akceptačně — od toho, co vidí uživatel ve formuláři, po odpověď backendu. Do AT testů a regrese vybírám scénáře, u kterých automatizace přináší opakovanou hodnotu.</p>
+						<h3>Akceptační a automatizované testy</h3>
+						<p>Funkčnost změn ověřuji akceptačně na frontendové i backendové části. Pro automatizované testy (AT) a regresi vybírám scénáře podle rizika, opakovatelnosti a nákladů na údržbu.</p>
 						<ul class="topic-list">
-							<li>Registrace, změny a verze API</li>
-							<li>Validace, kompatibilita a oprávnění</li>
-							<li>FE formuláře, vyhledávání a zobrazené stavy</li>
+							<li>Registrace, změny a verzování API</li>
+							<li>Validace, kompatibilita a přístupová práva</li>
+							<li>Formuláře, vyhledávání a zobrazení stavů ve FE</li>
 						</ul>
-						<div class="mini-flow" aria-label="Akceptační ověření, výběr automatizovaných testů, cílená regrese">
+						<div class="mini-flow" aria-label="Akceptační ověření, výběr AT scénářů, regrese">
 							<span><b>01</b> Akceptace</span><i aria-hidden="true">→</i>
-							<span><b>02</b> Vhodné AT</span><i aria-hidden="true">→</i>
+							<span><b>02</b> Výběr AT</span><i aria-hidden="true">→</i>
 							<span><b>03</b> Regrese</span>
 						</div>
-						<p class="method-note">U E2E přes více systémů ověřuji také prostupy, oprávnění a bezpečnostní pravidla.</p>
+						<p class="method-note">U end-to-end (E2E) testů napříč systémy zohledňuji síťové prostupy, oprávnění a bezpečnostní podmínky. Automatizaci volím podle přínosu a náročnosti údržby.</p>
 					</article>
 					<article class="detail-card">
-						<div class="card-kicker"><span class="status-dot status-blue"></span> SCHEMA REGISTRY · BE</div>
-						<h3>Backend testovaný jako klient.</h3>
-						<p>Rozhraní ověřuji přes API tak, že test simuluje klienta: odešle požadavek a kontroluje odpověď, validaci i očekávaný stav schématu.</p>
+						<div class="card-kicker"><span class="status-dot status-blue"></span> SCHEMA REGISTRY · BACKEND</div>
+						<h3>Testy přes API v roli klienta</h3>
+						<p>Backend ověřuji scénáři, které simulují klienta: odesílají požadavky a kontrolují odpovědi, validaci i chování při chybových stavech.</p>
 						<ul class="topic-list">
 							<li>Registrace a načítání schémat</li>
 							<li>Chybové odpovědi a validační pravidla</li>
-							<li>Testy API bez závislosti na uživatelském rozhraní</li>
+							<li>Rozhraní a chování backendu</li>
 						</ul>
 						<div class="api-path" aria-hidden="true"><span>Klient</span><i></i><b>API</b><i></i><span>Schema Registry</span></div>
 					</article>
@@ -65,9 +65,9 @@ import Footer from '../components/Footer.astro';
 
 			<section class="area" id="ci-cd" aria-labelledby="pipeline-title">
 				<div class="area-heading">
-					<p class="eyebrow">02 / CI/CD</p>
-					<h2 id="pipeline-title">Pipeline je taky produkt. Testuji celý její tok.</h2>
-					<p>Ověřuji každý krok buildu: přípravu, kontrolu a doručení očekávaných artefaktů.</p>
+					<p class="eyebrow">02 / CI/CD PIPELINE</p>
+					<h2 id="pipeline-title">Testování od buildu po publikaci</h2>
+					<p>Ověřuji generování a validaci artefaktů, jejich registraci a publikaci a také chování pipeline při chybě nebo změně prostředí.</p>
 				</div>
 				<div class="pipeline-card">
 					<div class="pipeline-flow" aria-label="Build, validace, artefakt, publikace">
@@ -77,17 +77,17 @@ import Footer from '../components/Footer.astro';
 						<span class="pipe-step"><b>04</b> Publikace</span>
 					</div>
 					<div class="pipeline-copy">
-						<div><h3>Co v pipeline hlídám</h3><p>Generování a publikaci API artefaktů, jejich registraci a metadata, validační chyby i chování po změně verze nebo prostředí.</p></div>
-						<div><h3>Jak poznám dobrý výsledek</h3><p>Úspěšný průchod doručí správný výstup. Při chybě chci jasný report, který ukáže místo a příčinu zastavení.</p></div>
+						<div><h3>Rozsah ověřování</h3><p>Generování API artefaktů, validace, registrace v katalogu, metadata a publikace.</p></div>
+						<div><h3>Chybové stavy a regrese</h3><p>Kontroluji reakce pipeline na neplatné vstupy, chyby v jednotlivých krocích a změny po upgradech.</p></div>
 					</div>
 				</div>
 			</section>
 
 			<section class="area" id="sdk" aria-labelledby="sdk-title">
 				<div class="area-heading">
-					<p class="eyebrow">03 / SDK · JAVA + .NET</p>
-					<h2 id="sdk-title">Klientská knihovna musí fungovat i mimo happy path.</h2>
-					<p>Testuji chování SDK napříč protokoly a scénáři, kde záleží na odpovědích, chybách i zachování kontextu požadavku.</p>
+					<p class="eyebrow">03 / JAVA A .NET SDK</p>
+					<h2 id="sdk-title">Testování klientských knihoven</h2>
+					<p>Testuji Java a .NET SDK při volání REST a SOAP služeb i při zprávové komunikaci. Zaměřuji se na zpracování odpovědí a chyb i na průchod trace ID a spanů mezi službami.</p>
 				</div>
 				<div class="sdk-card">
 					<div class="sdk-languages" aria-label="Jazykové platformy SDK">
@@ -95,20 +95,20 @@ import Footer from '../components/Footer.astro';
 					</div>
 					<div class="sdk-content">
 						<div>
-							<h3>Protokoly a integrace</h3>
+							<h3>Protokoly a zprávová komunikace</h3>
 							<div class="tags"><span>REST</span><span>SOAP</span><span>Kafka</span><span>Artemis</span></div>
 						</div>
 						<div>
-							<h3>Chování pod lupou</h3>
-							<p>Správné odpovědi i chyby, předávání trace ID a spanů a to, jestli diagnostické údaje přežijí cestu mezi službami.</p>
+							<h3>Testované oblasti</h3>
+							<p>Odpovědi a chybové stavy, předávání trace ID a spanů a jejich zachování při komunikaci mezi službami.</p>
 						</div>
 					</div>
 				</div>
 			</section>
 
 			<section class="cta">
-				<div><p class="eyebrow">HLEDÁTE TEST ENGINEERA?</p><h2>Tři jasné oblasti. Konkrétní příklady z praxe.</h2></div>
-				<a class="button" href="/kontakt/">Ozvat se Rostovi <span aria-hidden="true">↗</span></a>
+				<div><p class="eyebrow">KONTAKT</p><h2>V případě zájmu rád doplním další informace.</h2></div>
+				<a class="button" href="/kontakt/">Kontaktovat <span aria-hidden="true">↗</span></a>
 			</section>
 		</main>
 		<Footer />

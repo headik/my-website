@@ -6,28 +6,27 @@ import Footer from '../components/Footer.astro';
 
 <!doctype html>
 <html lang="cs">
-	<head><BaseHead title="O mně | Rosta Šlechta" description="Rostislav Rosta Šlechta, test engineer se zaměřením na weby, CI/CD pipeline a Java/.NET SDK." /></head>
+	<head><BaseHead title="O mně | Rosta Šlechta" description="Rostislav „Rosta“ Šlechta, test engineer se zaměřením na webové aplikace, CI/CD pipeline a Java/.NET SDK." /></head>
 	<body>
 		<Header />
 		<main class="about-page">
-			<p class="eyebrow">O ČLOVĚKU ZA TESTY</p>
+			<p class="eyebrow">O MNĚ</p>
 			<h1>Rostislav <span>„Rosta“</span> Šlechta.</h1>
 			<div class="about-copy">
-				<p class="lead">Mám přes 3 roky praxe jako test engineer ve významné bankovní společnosti. Zaměřuji se na webové aplikace, CI/CD pipeline a klientská SDK pro Javu a .NET.</p>
-				<p>U webů pokrývám API katalog ve frontendové i backendové části a testuji backend Schema Registry přes API jako simulovaný klient. Funkcionalitu ověřím akceptačně a pro automatizaci vybírám scénáře podle jejich přínosu a ceny údržby.</p>
-				<h2>Kvalita znamená vědět, co jsme ověřili</h2>
-				<p>Test pro mě není jen razítko „prošlo“. Chci týmu dát srozumitelnou odpověď: co jsme ověřili, co jsme našli a jaké riziko zbývá. Automatizaci používám tam, kde šetří opakovanou práci; explorativní testování tam, kde ještě nevíme, na co se zeptat.</p>
+				<p class="lead">Pracuji jako test engineer ve významné bankovní společnosti a mám více než tři roky praxe. Zaměřuji se na webové aplikace, CI/CD pipeline a klientská SDK pro Javu a .NET.</p>
+				<p>API katalog testuji ve frontendové i backendové části. Backend Schema Registry ověřuji přes API scénáři, které simulují klienta. Změny nejprve ověřuji akceptačně; scénáře pro AT a regresi vybírám podle rizika, opakovatelnosti a nákladů na údržbu.</p>
+				<h2>Přístup k testování</h2>
+				<p>Automatizaci využívám tam, kde její přínos odpovídá nárokům na přípravu a údržbu. U end-to-end (E2E) scénářů napříč systémy zohledňuji síťové prostupy, oprávnění a bezpečnostní podmínky. Testovací úroveň volím podle rizika, které má scénář pokrýt.</p>
 				<div class="focus-strip" aria-label="Tři hlavní oblasti zkušeností">
-					<span>01 <b>Weby · FE/BE</b></span>
-					<span>02 <b>CI/CD</b></span>
-					<span>03 <b>SDK · Java/.NET</b></span>
+					<span>01 <b>Webové aplikace · FE/BE</b></span>
+					<span>02 <b>CI/CD pipeline</b></span>
+					<span>03 <b>Java/.NET SDK</b></span>
 				</div>
-				<h2>AI? Jo. Autopilot? Ještě ne.</h2>
-				<p>AI nástroje se snažím využívat všude, kde dávají smysl. GitHub Copilot mám integrovaný přímo v IDE; pomáhá mi zrychlit rutinu a rozpracovat nápady. Za ověření výsledku ale pořád ručím já — Copilot zatím nemá vlastní testovací prostředí ani dovolenou.</p>
-				<div class="quote"><p>„Všechno funguje.“</p><span>Výborně. Teď zkusme zjistit, co přesně znamená „všechno“.</span></div>
-				<h2>Otevřeně o zdrojích</h2>
-				<p>Přehled zkušeností na tomto webu vychází z exportu mých reálných Jira stories a testovacích exekucí. Příklady zobecňuji; neuvádím interní názvy systémů, prostředí ani citlivé údaje o zaměstnavateli či produkci.</p>
-				<a class="button" href="/kontakt/">Probrat spolupráci <span aria-hidden="true">↗</span></a>
+				<h2>Využití AI v praxi</h2>
+				<p>V každodenní práci používám AI nástroje včetně GitHub Copilotu integrovaného v IDE. Jejich návrhy kontroluji a ověřuji v kontextu projektu i testovaného chování.</p>
+				<h2>Podklady a anonymizace</h2>
+				<p>Obsah webu vychází z exportu mých Jira úkolů a testovacích exekucí. Příklady jsem zobecnil; neuvádím interní názvy systémů, prostředí ani citlivé informace o zaměstnavateli nebo produkci.</p>
+				<a class="button" href="/kontakt/">Kontaktovat <span aria-hidden="true">↗</span></a>
 			</div>
 		</main>
 		<Footer />
@@ -46,9 +45,6 @@ import Footer from '../components/Footer.astro';
 	.focus-strip { display: flex; gap: .6rem; flex-wrap: wrap; margin: 1.6rem 0; }
 	.focus-strip span { padding: .55rem .7rem; border: 1px solid #d9ddd7; color: #a05e39; font-size: .65rem; font-weight: 800; letter-spacing: .08em; }
 	.focus-strip b { margin-left: .25rem; color: #34413c; font-size: .72rem; letter-spacing: 0; }
-	.quote { margin: 2.3rem 0; padding: 1.5rem 1.8rem; border-left: 4px solid #a05e39; background: #f0e6df; }
-	.quote p { margin: 0 0 .3rem; color: #243b35; font-size: 1.3rem; font-weight: 700; }
-	.quote span { color: #68716c; font-size: .9rem; }
 	.button { display: inline-flex; gap: 1rem; padding: .85rem 1.2rem; color: #fff; background: #243b35; text-decoration: none; font-weight: 700; }
 	.button:hover { color: #fff; background: #36564d; }
 </style>

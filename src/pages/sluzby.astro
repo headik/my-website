@@ -6,40 +6,40 @@ const areas = [
 	{
 		id: 'weby',
 		number: '01',
-		label: 'WEBY · FE + BE',
+		label: 'WEBOVÉ APLIKACE · FE + BE',
 		title: 'API katalog a Schema Registry',
-		intro: 'Funkcionalitu nejdřív ověřím akceptačně. AT testy a regresi stavím kolem scénářů, jejichž automatizace přináší hodnotu.',
-		details: 'Na API katalogu pokrývám FE i BE: formuláře, stavy, validace, oprávnění, registraci a změny API. Backend Schema Registry testuji přes API tak, že scénáře vystupují jako klient a ověřují odpovědi i chybové stavy. U E2E přes více systémů počítám s prostupy a bezpečnostními pravidly.',
+		intro: 'Funkčnost změn ověřuji akceptačně. Do automatizovaných testů (AT) a regresní sady zařazuji scénáře podle rizika, četnosti opakování a náročnosti údržby.',
+		details: 'API katalog testuji na FE i BE, mimo jiné formuláře, stavy, validace, oprávnění, registraci a změny API. Backend Schema Registry ověřuji přes API scénáři simulujícími klienta. U E2E napříč systémy zohledňuji síťové prostupy, oprávnění a bezpečnostní podmínky.',
 	},
 	{
 		id: 'ci-cd',
 		number: '02',
 		label: 'CI/CD',
 		title: 'Testování buildů a delivery pipeline',
-		intro: 'Pipeline musí doručit očekávaný artefakt a srozumitelně reportovat každou kontrolu.',
-		details: 'Ověřuji generování, validaci a publikaci artefaktů, registraci API, metadata i čitelné chování při chybě. Zahrnuji také regresní kontroly po změnách a upgradech.',
+		intro: 'Ověřuji průchod pipeline od buildu a validace po registraci a publikaci artefaktu.',
+		details: 'Kontroluji výstupy jednotlivých kroků, metadata, chybové stavy a regresní chování po změnách nebo upgradech.',
 	},
 	{
 		id: 'sdk',
 		number: '03',
-		label: 'SDK · JAVA + .NET',
-		title: 'Klientské knihovny v reálných scénářích',
-		intro: 'SDK testuji tak, jak ho používá aplikace: přes volání, odpovědi a občas i ne zrovna přívětivou chybu.',
-		details: 'Pracuji se scénáři pro Java a .NET SDK přes REST, SOAP i messaging. Sleduji zpracování chyb a také průchod trace ID a spanů mezi navazujícími službami.',
+		label: 'JAVA A .NET SDK',
+		title: 'Testování klientských knihoven',
+		intro: 'Ověřuji chování SDK v aplikacích a navazujících službách.',
+		details: 'Testuji scénáře při volání REST a SOAP služeb i při zprávové komunikaci, včetně zpracování chyb a předávání trace ID a spanů mezi službami.',
 	},
 ];
 ---
 
 <!doctype html>
 <html lang="cs">
-	<head><BaseHead title="S čím pomohu | Rostislav Šlechta" description="Testování webových aplikací, CI/CD pipeline a Java/.NET SDK." /></head>
+	<head><BaseHead title="Oblasti testování | Rostislav Šlechta" description="Testování webových aplikací, CI/CD pipeline a Java/.NET SDK." /></head>
 	<body>
 		<Header />
 		<main class="services-page">
 			<header class="page-intro">
-				<p class="eyebrow">JAK POMÁHÁM TÝMŮM</p>
-				<h1>Testuji tři vrstvy.<br /><span>Od webu po SDK.</span></h1>
-				<p class="lead">Jasné rozdělení, srozumitelný výsledek: weby (FE/BE), CI/CD pipeline a klientská SDK pro Javu a .NET.</p>
+				<p class="eyebrow">ODBORNÉ ZAMĚŘENÍ</p>
+				<h1>Webové aplikace,<br /><span>CI/CD pipeline a SDK.</span></h1>
+				<p class="lead">Zaměřuji se na API katalog a Schema Registry, CI/CD pipeline a Java/.NET SDK.</p>
 			</header>
 
 			<div class="service-list">
@@ -50,36 +50,36 @@ const areas = [
 						<h2>{area.title}</h2>
 						<p class="intro">{area.intro}</p>
 						<p>{area.details}</p>
-						<a href={'/reference/#' + area.id}>Příklady z praxe <span aria-hidden="true">↗</span></a>
+						<a href={'/reference/#' + area.id}>Podrobnosti o praxi <span aria-hidden="true">↗</span></a>
 					</div>
 				</article>)}
 			</div>
 
 			<section class="method">
 				<div>
-					<p class="eyebrow">U WEBŮ: AUTOMATIZACE S ROZMYŠLEM</p>
-					<h2>Testovací úroveň volím podle rizika, opakovatelnosti a ceny údržby.</h2>
-					<p>E2E přes několik systémů přináší další práci s prostupy, oprávněními a bezpečností. Proto automatizuji cíleně.</p>
+					<p class="eyebrow">PŘÍSTUP K AUTOMATIZACI</p>
+					<h2>Automatizaci volím podle rizika a přínosu scénáře.</h2>
+					<p>Zohledňuji také četnost opakování a náklady na údržbu. U end-to-end (E2E) testů přes více systémů řeším síťové prostupy, oprávnění a bezpečnostní podmínky.</p>
 				</div>
-				<div class="method-flow" aria-label="Akceptace, výběr automatizovaných testů, cílená regrese">
+				<div class="method-flow" aria-label="Akceptace, výběr AT scénářů, regrese">
 					<span><b>01</b> Akceptace</span><i aria-hidden="true">→</i>
-					<span><b>02</b> Vhodné AT</span><i aria-hidden="true">→</i>
+					<span><b>02</b> Výběr AT</span><i aria-hidden="true">→</i>
 					<span><b>03</b> Regrese</span>
 				</div>
 			</section>
 
 			<section class="deliverables">
-				<p class="eyebrow">CO ZŮSTANE PO TESTU</p>
-				<h2>Výsledek, se kterým se dá pracovat.</h2>
+				<p class="eyebrow">VÝSTUPY TESTOVÁNÍ</p>
+				<h2>Informace pro rozhodnutí o kvalitě a riziku.</h2>
 				<div class="deliverable-grid">
-					<p><b>Scénáře</b><br />Co jsme ověřili a proč.</p>
-					<p><b>Automatizace</b><br />Opakovatelné kontroly tam, kde dávají smysl.</p>
-					<p><b>Nálezy</b><br />Jasný popis, reprodukce a souvislosti.</p>
-					<p><b>Rozhodnutí</b><br />Co je pokryté a jaké riziko zbývá.</p>
+					<p><b>Rozsah</b><br />Ověřované scénáře a předpoklady.</p>
+					<p><b>Výsledky</b><br />Stav provedených kontrol.</p>
+					<p><b>Nálezy</b><br />Reprodukční kroky a technický kontext.</p>
+					<p><b>Rizika</b><br />Pokrytá oblast a otevřené otázky.</p>
 				</div>
 			</section>
 
-			<section class="cta"><div><p class="eyebrow">MÁTE KONKRÉTNÍ VÝZVU?</p><h2>Proberme ji dřív, než se z ní stane incident.</h2></div><a class="button" href="/kontakt/">Domluvit se <span aria-hidden="true">↗</span></a></section>
+			<section class="cta"><div><p class="eyebrow">KONTAKT</p><h2>V případě zájmu rád doplním další informace.</h2></div><a class="button" href="/kontakt/">Kontaktovat <span aria-hidden="true">↗</span></a></section>
 		</main>
 		<Footer />
 	</body>

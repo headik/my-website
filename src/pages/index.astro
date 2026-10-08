@@ -6,70 +6,69 @@ import Footer from '../components/Footer.astro';
 
 <!doctype html>
 <html lang="cs">
-	<head><BaseHead title="Rosta Šlechta | Test engineer" description="Test engineer zaměřený na webové aplikace, CI/CD pipeline a Java/.NET SDK." /></head>
+	<head><BaseHead title="Rostislav „Rosta“ Šlechta | Test engineer" description="Test engineer s více než třemi lety praxe v testování webových aplikací, CI/CD pipeline a Java/.NET SDK." /></head>
 	<body>
 		<Header />
 		<main class="home">
 			<section class="hero">
 				<div class="hero-copy">
-					<p class="eyebrow">TEST ENGINEER <span>·</span> WEBY <span>·</span> CI/CD <span>·</span> SDK</p>
-					<h1>Ahoj, jsem Rosťa.<br /><span>Testuji weby, CI/CD a SDK.</span></h1>
-					<p class="lead">Změnu nejdřív ověřím akceptačně. Automatizaci volím tam, kde přináší opakovanou jistotu a rozumný přínos.</p>
+					<p class="eyebrow">TEST ENGINEER <span>·</span> WEBOVÉ APLIKACE <span>·</span> CI/CD <span>·</span> SDK</p>
+					<h1>Rostislav „Rosta“ Šlechta.<br /><span>Test engineer</span></h1>
+					<p class="lead">Jako test engineer pracuji přes tři roky. Zaměřuji se na webové aplikace, CI/CD pipeline a klientská SDK pro Javu a .NET. Při návrhu testů zohledňuji riziko, opakovatelnost a náročnost údržby.</p>
 					<div class="actions">
-						<a class="button primary" href="/reference/">Moje zkušenosti <span aria-hidden="true">↗</span></a>
-						<a class="text-link" href="/about/">Více o mně <span aria-hidden="true">→</span></a>
+						<a class="button primary" href="/reference/">Zkušenosti <span aria-hidden="true">↗</span></a>
+						<a class="text-link" href="/about/">O mně <span aria-hidden="true">→</span></a>
 					</div>
-					<p class="role-note">3+ roky praxe · bankovnictví · API katalogy · Java/.NET</p>
+					<p class="role-note">Bankovní prostředí · API katalogy · Java/.NET SDK</p>
 				</div>
-				<div class="signal-card" aria-label="Tři oblasti testování">
-					<p class="signal-label">TESTOVACÍ SMYČKA</p>
-					<p class="signal-question">„Hotovo?“</p>
+				<div class="signal-card" aria-label="Hlavní oblasti odborné praxe">
+					<p class="signal-label">ODBORNÉ ZAMĚŘENÍ</p>
+					<p class="signal-question">Oblasti praxe</p>
 					<div class="signal-divider"><span></span><span></span><span></span></div>
 					<ul>
-						<li><span>WEBY</span><b>akceptace → vhodné AT → regrese</b></li>
-						<li><span>CI/CD</span><b>build → validace → publikace</b></li>
-						<li><span>SDK</span><b>Java ↔ .NET</b></li>
+						<li><span>WEB</span><b>API katalog · FE / BE</b></li>
+						<li><span>CI/CD</span><b>pipeline a artefakty</b></li>
+						<li><span>SDK</span><b>Java a .NET</b></li>
 					</ul>
-					<div class="signal-stamp">TEST. OVĚŘENO. ZAPSÁNO.</div>
 				</div>
 			</section>
 
 			<section class="areas" aria-labelledby="areas-title">
 				<div class="section-heading">
-					<div><p class="eyebrow">TŘI HLAVNÍ OBLASTI</p><h2 id="areas-title">Kde trávím čas s testy.</h2></div>
-					<a class="text-link" href="/reference/">Příklady z praxe <span aria-hidden="true">→</span></a>
+					<div><p class="eyebrow">ODBORNÉ ZAMĚŘENÍ</p><h2 id="areas-title">Tři oblasti testování.</h2></div>
+					<a class="text-link" href="/reference/">Podrobnosti o praxi <span aria-hidden="true">→</span></a>
 				</div>
 				<div class="area-grid">
 					<article class="area-card">
 						<div class="area-top"><span class="area-number">01</span><span class="area-label">FE + BE</span></div>
 						<div class="area-graphic web-graphic" aria-hidden="true"><span>FE</span><i>↔</i><b>API</b><i>↔</i><span>BE</span></div>
-						<h3>Weby</h3>
-						<p>API katalog testuji od formuláře po backend. Schema Registry prověřuji na backendu přes API, jako by test byl klient.</p>
+						<h3>Webové aplikace</h3>
+						<p>API katalog testuji ve frontendové i backendové části. Schema Registry ověřuji na backendu prostřednictvím API klientských scénářů.</p>
 						<a href="/reference/#weby">Akceptace → vhodné AT → regrese <span aria-hidden="true">↗</span></a>
 					</article>
 					<article class="area-card">
 						<div class="area-top"><span class="area-number">02</span><span class="area-label">DELIVERY</span></div>
 						<div class="area-graphic pipeline-graphic" aria-hidden="true"><span>BUILD</span><i></i><span>TEST</span><i></i><span>SHIP</span></div>
 						<h3>CI/CD pipeline</h3>
-						<p>Ověřuji, že pipeline připraví správný artefakt, zkontroluje ho a doručí tam, kam má. Když se běh zastaví, chci vědět přesně kde.</p>
+						<p>Ověřuji generování, validaci a publikaci artefaktů v CI/CD pipeline včetně chybových stavů a návaznosti na další systémy.</p>
 						<a href="/reference/#ci-cd">Co testuji v pipeline <span aria-hidden="true">↗</span></a>
 					</article>
 					<article class="area-card">
 						<div class="area-top"><span class="area-number">03</span><span class="area-label">JAVA + .NET</span></div>
 						<div class="area-graphic sdk-graphic" aria-hidden="true"><span>Java</span><b>SDK</b><span>.NET</span></div>
-						<h3>Klientská SDK</h3>
-						<p>Testuji Java a .NET knihovny při volání REST, SOAP i messagingu — včetně chyb a trasování požadavků.</p>
+						<h3>Java a .NET SDK</h3>
+						<p>Testuji Java a .NET SDK při volání REST a SOAP služeb i při zprávové komunikaci. Ověřuji také zpracování chyb a přenos trace ID a spanů.</p>
 						<a href="/reference/#sdk">Jak testuji SDK <span aria-hidden="true">↗</span></a>
 					</article>
 				</div>
-				<p class="source-note"><span aria-hidden="true">✓</span> Přehled vychází z exportu reálných Jira stories a testovacích exekucí; interní názvy a citlivé detaily zůstávají skryté.</p>
+				<p class="source-note"><span aria-hidden="true">✓</span> Příklady vycházejí z exportu mých Jira úkolů a testovacích exekucí. Interní názvy systémů neuvádím.</p>
 			</section>
 
 			<section class="method" aria-labelledby="method-title">
 				<div class="method-copy">
-					<p class="eyebrow">MŮJ PŘÍSTUP K WEBŮM</p>
-					<h2 id="method-title">Nejdřív ověřit. Pak zvolit správnou míru automatizace.</h2>
-					<p>Funkcionalitu nejdřív ověřím akceptačně. Opakovatelné scénáře automatizuji podle přínosu. U E2E přes více systémů počítám také s prostupy, oprávněními a bezpečnostními pravidly.</p>
+					<p class="eyebrow">PŘÍSTUP K AUTOMATIZACI</p>
+					<h2 id="method-title">Automatizaci volím podle účelu a rizika.</h2>
+					<p>Funkcionalitu nejprve ověřuji akceptačně. Do automatizovaných testů (AT) a regrese zařazuji scénáře podle jejich přínosu a četnosti opakování. U end-to-end (E2E) scénářů napříč systémy zohledňuji také prostupy, oprávnění a bezpečnostní podmínky.</p>
 				</div>
 				<div class="method-flow" aria-label="Akceptace, výběr automatizovaných testů, cílená regrese">
 					<span><b>01</b> Akceptace</span><i aria-hidden="true">→</i>
@@ -80,8 +79,8 @@ import Footer from '../components/Footer.astro';
 
 			<section class="toolkit" aria-labelledby="toolkit-title">
 				<div class="toolkit-heading">
-					<p class="eyebrow">MOJE VÝBAVA</p>
-					<h2 id="toolkit-title">Nástroje? Mám. Zázračné tlačítko? Zatím ne.</h2>
+					<p class="eyebrow">NÁSTROJE A PRACOVNÍ POSTUPY</p>
+					<h2 id="toolkit-title">Nástroje používané v praxi.</h2>
 				</div>
 				<div class="toolkit-grid">
 					<article class="tool-card">
@@ -89,20 +88,20 @@ import Footer from '../components/Footer.astro';
 						<div class="tags"><span>Mocha</span><span>Playwright</span><span>Postman</span><span>Bruno</span><span>JMeter</span></div>
 					</article>
 					<article class="tool-card">
-						<p class="tool-label">KORPORÁTNÍ REALITA</p>
+						<p class="tool-label">TÝMOVÁ SPOLUPRÁCE A MONITORING</p>
 						<div class="tags"><span>Jira</span><span>Confluence</span><span>Grafana</span></div>
 					</article>
 					<article class="tool-card ai-card">
 						<p class="tool-label">AI V KAŽDODENNÍ PRÁCI</p>
-						<h3>GitHub Copilot přímo v IDE.</h3>
-						<p>AI mi pomáhá s rutinou i nápady. Její návrhy ale pořád kontroluji a testuji — autopilot zatím nedostal přístup k tlačítku „Vydat do produkce“.</p>
+						<h3>GitHub Copilot v IDE.</h3>
+						<p>Copilot používám jako podporu při práci s kódem a testy. Vygenerované návrhy kontroluji a ověřuji v kontextu projektu.</p>
 					</article>
 				</div>
 			</section>
 
 			<section class="closing">
-				<div><p class="eyebrow">HLEDÁTE TEST ENGINEERA?</p><h2>Proberme, kde by se vám hodila další sada očí.</h2></div>
-				<a class="button secondary" href="/kontakt/">Napište mi <span aria-hidden="true">↗</span></a>
+				<div><p class="eyebrow">KONTAKT</p><h2>Rád proberu své zkušenosti a možnosti spolupráce.</h2></div>
+				<a class="button secondary" href="/kontakt/">Kontaktovat <span aria-hidden="true">↗</span></a>
 			</section>
 		</main>
 		<Footer />
@@ -133,7 +132,6 @@ import Footer from '../components/Footer.astro';
 	.signal-card li { display: flex; justify-content: space-between; gap: .8rem; padding: .65rem 0; border-top: 1px solid #eceee9; font-size: .7rem; }
 	.signal-card li span { color: #243b35; font-size: .62rem; font-weight: 800; letter-spacing: .08em; }
 	.signal-card li b { color: #78807b; font-weight: 500; text-align: right; }
-	.signal-stamp { display: inline-block; margin-top: 1rem; padding: .35rem .55rem; border: 1px solid #d8a48c; color: #a05e39; font-size: .58rem; font-weight: 800; letter-spacing: .12em; transform: rotate(-2deg); }
 	.areas, .toolkit { padding: 4.5rem 0; border-top: 1px solid #d9ddd7; }
 	.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 1rem; }
 	.section-heading .eyebrow { margin-bottom: .7rem; }
