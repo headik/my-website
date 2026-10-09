@@ -3,9 +3,9 @@
 	--accent-strong: #67dfb1;
 	--violet: #bda4ff;
 	--coral: #ff9e7d;
-	--ink: #07131c;
-	--ink-soft: #0c1c27;
-	--panel: #102431;
+	--ink: #0a1922;
+	--ink-soft: #102631;
+	--panel: #132e3a;
 	--paper: #ecf7f3;
 	--muted: #9bb0b7;
 	--line: rgba(195, 228, 220, .18);
@@ -22,7 +22,6 @@ html { scroll-behavior: smooth; }
 body {
 	margin: 0;
 	background: var(--ink);
-	background-image: radial-gradient(circle at 12% -10%, rgba(91, 221, 181, .14), transparent 30rem), radial-gradient(circle at 90% 5%, rgba(154, 113, 255, .12), transparent 25rem);
 	color: var(--paper);
 	font-family: "Atkinson", Arial, sans-serif;
 	font-size: 20px;
@@ -31,7 +30,6 @@ body {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 }
-body::before { position: fixed; z-index: -1; inset: 0; background-image: linear-gradient(rgba(154, 218, 199, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(154, 218, 199, .035) 1px, transparent 1px); background-size: 44px 44px; content: ""; mask-image: linear-gradient(to bottom, #000, transparent 75%); pointer-events: none; }
 main { width: 720px; max-width: calc(100% - 2em); margin: auto; padding: 3em 1em; }
 h1, h2, h3, h4, h5, h6 { margin: 0 0 .5rem; color: var(--paper); line-height: 1.12; }
 h1 { font-size: 3.052em; } h2 { font-size: 2.441em; } h3 { font-size: 1.953em; } h4 { font-size: 1.563em; } h5 { font-size: 1.25em; }

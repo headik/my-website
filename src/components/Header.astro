@@ -8,20 +8,20 @@ import { SITE_TITLE } from '../consts';
 		<h2><a href="/">{SITE_TITLE}<span aria-hidden="true">.</span></a></h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Úvod</HeaderLink>
+			<HeaderLink href="#sluzby">Služby</HeaderLink>
 			<HeaderLink href="#oblasti">Oblasti</HeaderLink>
 			<HeaderLink href="#pristup">Přístup</HeaderLink>
-			<HeaderLink href="#o-mne">O mně</HeaderLink>
 			<HeaderLink href="#kontakt">Kontakt</HeaderLink>
 		</div>
 	</nav>
 </header>
 
 <style>
-	header { position: sticky; z-index: 5; top: 0; padding: 0 1.5rem; border-bottom: 1px solid rgba(195, 228, 220, .13); background: rgba(7, 19, 28, .76); backdrop-filter: blur(18px); }
+	header { position: sticky; z-index: 5; top: 0; padding: 0 1.5rem; border-bottom: 1px solid rgba(195, 228, 220, .13); background: rgba(10, 25, 34, .94); }
 	nav { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; }
 	h2 { margin: 0; font-size: 1.05rem; letter-spacing: -.04em; }
 	h2 a { color: #ecf7f3; text-decoration: none; }
-	h2 span { color: #8bffcf; text-shadow: 0 0 18px rgba(139, 255, 207, .75); }
+	h2 span { color: #8bffcf; }
 	.internal-links { display: flex; gap: .15rem; }
 	nav :global(a) { padding: 1rem .7rem; color: #aebfc4; text-decoration: none; border-bottom: 2px solid transparent; font-size: .88rem; transition: color .2s ease, border-color .2s ease; }
 	nav :global(a:hover), nav :global(a.active) { color: #ecf7f3; border-bottom-color: #8bffcf; }
