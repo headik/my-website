@@ -12,97 +12,39 @@ import Footer from '../components/Footer.astro';
 		<main class="home">
 			<section class="hero">
 				<div class="hero-copy">
-					<p class="eyebrow">TEST ENGINEER <span>·</span> WEBOVÉ APLIKACE <span>·</span> CI/CD <span>·</span> SDK</p>
-					<h1>Rostislav „Rosta“ Šlechta.<br /><span>Test engineer</span></h1>
-					<p class="lead">Jako test engineer pracuji přes tři roky. Zaměřuji se na webové aplikace, CI/CD pipeline a klientská SDK pro Javu a .NET. Při návrhu testů zohledňuji riziko, opakovatelnost a náročnost údržby.</p>
-					<div class="actions">
-						<a class="button primary" href="/reference/">Zkušenosti <span aria-hidden="true">↗</span></a>
-						<a class="text-link" href="/about/">O mně <span aria-hidden="true">→</span></a>
-					</div>
-					<p class="role-note">Bankovní prostředí · API katalogy · Java/.NET SDK</p>
+					<p class="eyebrow"><i></i> TEST ENGINEER / 3+ ROKY PRAXE</p>
+					<h1>Rostislav<br /><span>„Rosta“ Šlechta.</span></h1>
+					<p class="role">Test engineer pro systémy, kde záleží na detailu.</p>
+					<p class="lead">Pracuji s webovými aplikacemi, CI/CD pipeline a klientskými SDK pro Javu a .NET. Testy navrhuji podle rizika, opakovatelnosti a náročnosti údržby.</p>
+					<div class="actions"><a class="button primary" href="/reference/">Prozkoumat praxi <span aria-hidden="true">↗</span></a><a class="text-link" href="/about/">O mně <span aria-hidden="true">→</span></a></div>
 				</div>
-				<div class="signal-card" aria-label="Hlavní oblasti odborné praxe">
-					<p class="signal-label">ODBORNÉ ZAMĚŘENÍ</p>
-					<p class="signal-question">Oblasti praxe</p>
-					<div class="signal-divider"><span></span><span></span><span></span></div>
+				<aside class="control-card" aria-label="Hlavní oblasti odborné praxe">
+					<div class="panel-bar"><span>TEST SCOPE</span><b>● ACTIVE</b></div>
+					<p class="panel-title">Oblasti praxe</p>
 					<ul>
-						<li><span>WEB</span><b>API katalog · FE / BE</b></li>
-						<li><span>CI/CD</span><b>pipeline a artefakty</b></li>
-						<li><span>SDK</span><b>Java a .NET</b></li>
+						<li><span class="orb mint"></span><div><b>Webové aplikace</b><small>API katalog · FE / BE</small></div><em>01</em></li>
+						<li><span class="orb violet"></span><div><b>CI/CD pipeline</b><small>Build · validace · artefakty</small></div><em>02</em></li>
+						<li><span class="orb coral"></span><div><b>Java a .NET SDK</b><small>REST · SOAP · messaging</small></div><em>03</em></li>
 					</ul>
-				</div>
+					<div class="panel-footer"><span>bankovní prostředí</span><span>odborné testování</span></div>
+				</aside>
 			</section>
 
 			<section class="areas" aria-labelledby="areas-title">
-				<div class="section-heading">
-					<div><p class="eyebrow">ODBORNÉ ZAMĚŘENÍ</p><h2 id="areas-title">Tři oblasti testování.</h2></div>
-					<a class="text-link" href="/reference/">Podrobnosti o praxi <span aria-hidden="true">→</span></a>
-				</div>
+				<div class="section-heading"><div><p class="eyebrow">KDE SE POTKÁVÁM S KÓDEM</p><h2 id="areas-title">Tři kontexty, ve kterých testuji.</h2></div><a class="text-link" href="/reference/">Podrobnosti o praxi <span aria-hidden="true">→</span></a></div>
 				<div class="area-grid">
-					<article class="area-card">
-						<div class="area-top"><span class="area-number">01</span><span class="area-label">FE + BE</span></div>
-						<div class="area-graphic web-graphic" aria-hidden="true"><span>FE</span><i>↔</i><b>API</b><i>↔</i><span>BE</span></div>
-						<h3>Webové aplikace</h3>
-						<p>API katalog testuji ve frontendové i backendové části. Schema Registry ověřuji na backendu prostřednictvím API klientských scénářů.</p>
-						<a href="/reference/#weby">Akceptace → vhodné AT → regrese <span aria-hidden="true">↗</span></a>
-					</article>
-					<article class="area-card">
-						<div class="area-top"><span class="area-number">02</span><span class="area-label">DELIVERY</span></div>
-						<div class="area-graphic pipeline-graphic" aria-hidden="true"><span>BUILD</span><i></i><span>TEST</span><i></i><span>SHIP</span></div>
-						<h3>CI/CD pipeline</h3>
-						<p>Ověřuji generování, validaci a publikaci artefaktů v CI/CD pipeline včetně chybových stavů a návaznosti na další systémy.</p>
-						<a href="/reference/#ci-cd">Co testuji v pipeline <span aria-hidden="true">↗</span></a>
-					</article>
-					<article class="area-card">
-						<div class="area-top"><span class="area-number">03</span><span class="area-label">JAVA + .NET</span></div>
-						<div class="area-graphic sdk-graphic" aria-hidden="true"><span>Java</span><b>SDK</b><span>.NET</span></div>
-						<h3>Java a .NET SDK</h3>
-						<p>Testuji Java a .NET SDK při volání REST a SOAP služeb i při zprávové komunikaci. Ověřuji také zpracování chyb a přenos trace ID a spanů.</p>
-						<a href="/reference/#sdk">Jak testuji SDK <span aria-hidden="true">↗</span></a>
-					</article>
+					<article class="area-card web"><div class="area-top"><span>01</span><b>FE + BE</b></div><div class="diagram"><i>FE</i><u></u><strong>API</strong><u></u><i>BE</i></div><h3>Webové aplikace</h3><p>API katalog testuji ve frontendové i backendové části. Schema Registry ověřuji přes API scénáře simulující klienta.</p><a href="/reference/#weby">Weby a API <span aria-hidden="true">↗</span></a></article>
+					<article class="area-card pipeline"><div class="area-top"><span>02</span><b>CI/CD</b></div><div class="diagram"><i>BUILD</i><u></u><strong>CHECK</strong><u></u><i>SHIP</i></div><h3>CI/CD pipeline</h3><p>Ověřuji generování, validaci a publikaci artefaktů, včetně chybových stavů a návazností mezi systémy.</p><a href="/reference/#ci-cd">Pipeline a artefakty <span aria-hidden="true">↗</span></a></article>
+					<article class="area-card sdk"><div class="area-top"><span>03</span><b>JAVA + .NET</b></div><div class="diagram"><i>Java</i><u></u><strong>SDK</strong><u></u><i>.NET</i></div><h3>Klientská SDK</h3><p>Testuji REST, SOAP i zprávovou komunikaci, včetně zpracování chyb a předávání trace ID a spanů.</p><a href="/reference/#sdk">SDK a integrace <span aria-hidden="true">↗</span></a></article>
 				</div>
 				<p class="source-note"><span aria-hidden="true">✓</span> Příklady vycházejí z exportu mých Jira úkolů a testovacích exekucí. Interní názvy systémů neuvádím.</p>
 			</section>
 
-			<section class="method" aria-labelledby="method-title">
-				<div class="method-copy">
-					<p class="eyebrow">PŘÍSTUP K AUTOMATIZACI</p>
-					<h2 id="method-title">Automatizaci volím podle účelu a rizika.</h2>
-					<p>Funkcionalitu nejprve ověřuji akceptačně. Do automatizovaných testů (AT) a regrese zařazuji scénáře podle jejich přínosu a četnosti opakování. U end-to-end (E2E) scénářů napříč systémy zohledňuji také prostupy, oprávnění a bezpečnostní podmínky.</p>
-				</div>
-				<div class="method-flow" aria-label="Akceptace, výběr automatizovaných testů, cílená regrese">
-					<span><b>01</b> Akceptace</span><i aria-hidden="true">→</i>
-					<span><b>02</b> Vhodné AT</span><i aria-hidden="true">→</i>
-					<span><b>03</b> Cílená regrese</span>
-				</div>
-			</section>
+			<section class="method" aria-labelledby="method-title"><div><p class="eyebrow">PŘÍSTUP K AUTOMATIZACI</p><h2 id="method-title">Automatizace má chránit důležité scénáře, ne jen zaplnit report.</h2><p>Funkcionalitu nejprve ověřuji akceptačně. Pro AT a regresi vybírám scénáře podle přínosu. U E2E testů napříč systémy zohledňuji i síťové prostupy, oprávnění a bezpečnostní podmínky.</p></div><div class="method-flow" aria-label="Akceptace, výběr automatizovaných testů, cílená regrese"><span><b>01</b> Akceptace</span><i>→</i><span><b>02</b> Vhodné AT</span><i>→</i><span><b>03</b> Regrese</span></div></section>
 
-			<section class="toolkit" aria-labelledby="toolkit-title">
-				<div class="toolkit-heading">
-					<p class="eyebrow">NÁSTROJE A PRACOVNÍ POSTUPY</p>
-					<h2 id="toolkit-title">Nástroje používané v praxi.</h2>
-				</div>
-				<div class="toolkit-grid">
-					<article class="tool-card">
-						<p class="tool-label">TESTOVÁNÍ</p>
-						<div class="tags"><span>Mocha</span><span>Playwright</span><span>Postman</span><span>Bruno</span><span>JMeter</span></div>
-					</article>
-					<article class="tool-card">
-						<p class="tool-label">TÝMOVÁ SPOLUPRÁCE A MONITORING</p>
-						<div class="tags"><span>Jira</span><span>Confluence</span><span>Grafana</span></div>
-					</article>
-					<article class="tool-card ai-card">
-						<p class="tool-label">AI V KAŽDODENNÍ PRÁCI</p>
-						<h3>GitHub Copilot v IDE.</h3>
-						<p>Copilot používám jako podporu při práci s kódem a testy. Vygenerované návrhy kontroluji a ověřuji v kontextu projektu.</p>
-					</article>
-				</div>
-			</section>
+			<section class="toolkit" aria-labelledby="toolkit-title"><div class="toolkit-heading"><p class="eyebrow">NÁSTROJE A PRACOVNÍ POSTUPY</p><h2 id="toolkit-title">Nástroje, které používám v praxi.</h2></div><div class="toolkit-grid"><article class="tool-card"><p>TESTOVÁNÍ</p><div class="tags"><span>Mocha</span><span>Playwright</span><span>Postman</span><span>Bruno</span><span>JMeter</span></div></article><article class="tool-card"><p>SPOLUPRÁCE A MONITORING</p><div class="tags"><span>Jira</span><span>Confluence</span><span>Grafana</span></div></article><article class="tool-card ai-card"><p>AI V IDE</p><h3>GitHub Copilot</h3><span>Podpora při práci s kódem a testy. Návrhy vždy ověřuji v kontextu projektu.</span></article></div></section>
 
-			<section class="closing">
-				<div><p class="eyebrow">KONTAKT</p><h2>Rád proberu své zkušenosti a možnosti spolupráce.</h2></div>
-				<a class="button secondary" href="/kontakt/">Kontaktovat <span aria-hidden="true">↗</span></a>
-			</section>
+			<section class="closing"><div><p class="eyebrow">KONTAKT</p><h2>Rád proberu zkušenosti i možnosti spolupráce.</h2></div><a class="button secondary" href="/kontakt/">Napsat e-mail <span aria-hidden="true">↗</span></a></section>
 		</main>
 		<Footer />
 	</body>
@@ -110,72 +52,26 @@ import Footer from '../components/Footer.astro';
 
 <style>
 	.home { width: min(100% - 3rem, 1100px); max-width: none; padding: 0 0 5rem; }
-	.hero { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(270px, .75fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); padding: clamp(4rem, 9vw, 7.5rem) 0 5rem; }
-	.eyebrow { margin: 0 0 1rem; color: #a05e39; font-size: .7rem; font-weight: 800; letter-spacing: .15em; }
-	.eyebrow span { color: #9ba59e; }
-	h1 { max-width: 800px; margin: 0; font-size: clamp(3rem, 6.5vw, 5.5rem); line-height: .99; letter-spacing: -.065em; }
-	h1 span { color: #a05e39; }
-	.lead { max-width: 640px; margin: 1.7rem 0 0; color: #59615d; font-size: clamp(1.1rem, 2vw, 1.3rem); line-height: 1.65; }
-	.actions { display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap; margin-top: 2rem; }
-	.button { display: inline-flex; align-items: center; gap: 1.2rem; padding: .85rem 1.2rem; border-radius: 3px; text-decoration: none; font-size: .95rem; font-weight: 700; }
-	.primary { color: #fff; background: #243b35; }
-	.primary:hover { color: #fff; background: #36564d; }
-	.text-link { color: #243b35; font-size: .95rem; font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: .25em; }
-	.role-note { margin: 2rem 0 0; color: #79817d; font-size: .82rem; }
-	.signal-card { position: relative; padding: 1.7rem; border: 1px solid #d7ddd5; background: #fffefa; box-shadow: 12px 12px 0 #e9ece6; transform: rotate(1deg); }
-	.signal-label, .area-label, .tool-label { color: #a05e39; font-size: .65rem; font-weight: 800; letter-spacing: .14em; }
-	.signal-question { margin: 1.2rem 0 .6rem; color: #243b35; font-size: 1.65rem; font-weight: 700; letter-spacing: -.04em; }
-	.signal-divider { display: flex; gap: .3rem; margin: 1.1rem 0; }
-	.signal-divider span { width: 22px; height: 4px; background: #d7ddd5; }
-	.signal-divider span:first-child { background: #a05e39; }
-	.signal-card ul { padding: 0; margin: 0; list-style: none; }
-	.signal-card li { display: flex; justify-content: space-between; gap: .8rem; padding: .65rem 0; border-top: 1px solid #eceee9; font-size: .7rem; }
-	.signal-card li span { color: #243b35; font-size: .62rem; font-weight: 800; letter-spacing: .08em; }
-	.signal-card li b { color: #78807b; font-weight: 500; text-align: right; }
-	.areas, .toolkit { padding: 4.5rem 0; border-top: 1px solid #d9ddd7; }
-	.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 1rem; }
-	.section-heading .eyebrow { margin-bottom: .7rem; }
-	.section-heading h2, .method h2, .closing h2 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -.045em; }
-	.section-heading > a { margin-bottom: .35rem; white-space: nowrap; }
-	.area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
-	.area-card { display: flex; min-height: 330px; flex-direction: column; padding: 1.4rem; border: 1px solid #d9ddd7; background: rgba(255,255,255,.62); }
-	.area-top { display: flex; justify-content: space-between; align-items: center; }
-	.area-number { color: #a05e39; font-size: .72rem; font-weight: 800; letter-spacing: .12em; }
-	.area-graphic { display: flex; min-height: 65px; align-items: center; justify-content: center; gap: .5rem; margin: 1rem 0 .4rem; }
-	.area-graphic span, .area-graphic b { padding: .4rem .55rem; border: 1px solid #d7ddd5; color: #34413c; background: #f7f8f4; font-size: .65rem; font-weight: 800; letter-spacing: .06em; }
-	.area-graphic b { color: #fff; border-color: #668b8c; background: #668b8c; }
-	.area-graphic i { color: #a05e39; font-size: .8rem; font-style: normal; }
-	.pipeline-graphic { gap: .35rem; }
-	.pipeline-graphic span { border: 0; background: #e9ece6; font-size: .56rem; }
-	.pipeline-graphic i { width: 22px; height: 1px; background: #b8c5bb; }
-	.sdk-graphic span:last-child { border-color: #668b8c; background: #e7efed; }
-	.area-card h3 { margin: .5rem 0 .5rem; color: #243b35; font-size: 1.35rem; letter-spacing: -.03em; }
-	.area-card p { margin: 0 0 1.1rem; color: #626b66; font-size: .9rem; line-height: 1.65; }
-	.area-card a { margin-top: auto; color: #243b35; font-size: .82rem; font-weight: 700; text-underline-offset: .2em; }
-	.source-note { display: flex; gap: .65rem; align-items: center; margin: 1.2rem 0 0; color: #737d76; font-size: .78rem; line-height: 1.5; }
-	.source-note span { display: grid; width: 1.2rem; height: 1.2rem; flex: 0 0 auto; place-items: center; border: 1px solid #a7b6a9; border-radius: 50%; color: #668b6d; font-size: .65rem; font-weight: 800; }
-	.method { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 2rem; color: #fff; background: #243b35; }
-	.method .eyebrow { color: #e4a986; }
-	.method h2 { max-width: 650px; }
-	.method-copy > p:last-child { max-width: 650px; margin: 1rem 0 0; color: #d3ddd7; font-size: .92rem; line-height: 1.65; }
-	.method-flow { display: grid; gap: .65rem; }
-	.method-flow span { display: flex; align-items: center; gap: .65rem; font-size: .82rem; font-weight: 700; white-space: nowrap; }
-	.method-flow b { display: grid; width: 1.6rem; height: 1.6rem; place-items: center; border-radius: 50%; color: #243b35; background: #e4a986; font-size: .62rem; }
-	.method-flow i { margin-left: .75rem; color: #e4a986; font-size: .75rem; line-height: .3; }
-	.toolkit-heading { max-width: 650px; }
-	.toolkit-heading .eyebrow { margin-bottom: .7rem; }
-	.toolkit-heading h2 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -.045em; }
-	.toolkit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
-	.tool-card { min-height: 150px; padding: 1.4rem; border: 1px solid #d9ddd7; background: rgba(255,255,255,.6); }
-	.tool-label { margin: 0 0 1rem; }
-	.tags { display: flex; flex-wrap: wrap; gap: .45rem; }
-	.tags span { padding: .3rem .55rem; border-radius: 2px; color: #34413c; background: #e9ece6; font-size: .78rem; font-weight: 700; }
-	.ai-card h3 { margin: 0 0 .5rem; color: #243b35; font-size: 1.2rem; }
-	.ai-card > p:last-child { margin: 0; color: #626b66; font-size: .86rem; line-height: 1.55; }
-	.closing { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: clamp(2rem, 5vw, 3.5rem); background: #f0e6df; }
-	.closing .eyebrow { color: #a05e39; }
-	.secondary { flex: 0 0 auto; color: #fff; background: #a05e39; }
-	.secondary:hover { color: #fff; background: #814a2e; }
-	@media (max-width: 850px) { .hero { grid-template-columns: 1fr; } .signal-card { max-width: 430px; margin: 0 auto; transform: rotate(.4deg); } .area-grid { grid-template-columns: 1fr 1fr; } .area-card:last-child { grid-column: 1 / -1; min-height: 270px; } .method { grid-template-columns: 1fr; } .method-flow { display: flex; align-items: center; flex-wrap: wrap; gap: .55rem; } .method-flow i { margin-left: 0; } }
-	@media (max-width: 650px) { .home { width: min(100% - 2rem, 1100px); padding-bottom: 3rem; } .hero { padding: 4rem 0; } .area-grid, .toolkit-grid { grid-template-columns: 1fr; } .area-card:last-child { grid-column: auto; min-height: 300px; } .section-heading { display: block; } .section-heading > a { display: inline-block; margin-top: 1rem; } .method { padding: 1.5rem; } .toolkit, .areas { padding: 3.5rem 0; } .closing { align-items: flex-start; flex-direction: column; } }
+	.hero { display: grid; grid-template-columns: 1.3fr .8fr; align-items: center; gap: clamp(2rem, 7vw, 7rem); min-height: 610px; padding: clamp(5rem, 10vw, 9rem) 0 5rem; }
+	.eyebrow { margin: 0 0 .9rem; color: var(--accent); font-size: .68rem; font-weight: 700; letter-spacing: .15em; }
+	.eyebrow i { display: inline-block; width: .55rem; height: .55rem; margin-right: .45rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 16px var(--accent); }
+	h1 { margin: 0; font-size: clamp(3.25rem, 7vw, 6.3rem); letter-spacing: -.075em; }
+	h1 span { color: var(--accent); }
+	.role { margin: 1rem 0 0; color: var(--violet); font-size: clamp(1.2rem, 2.2vw, 1.65rem); font-weight: 700; letter-spacing: -.03em; }
+	.lead { max-width: 630px; margin: 1.25rem 0 0; color: var(--muted); font-size: 1.08rem; line-height: 1.7; }
+	.actions { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem; }
+	.button { display: inline-flex; align-items: center; gap: 1rem; padding: .86rem 1.15rem; border-radius: 999px; text-decoration: none; font-size: .9rem; font-weight: 700; transition: transform .2s ease, box-shadow .2s ease; }
+	.button:hover { transform: translateY(-2px); }
+	.primary { color: #062019; background: var(--accent); box-shadow: 0 10px 30px rgba(139,255,207,.2); }.primary:hover { color: #062019; box-shadow: 0 14px 35px rgba(139,255,207,.32); }
+	.text-link { color: #d9e7e3; font-size: .9rem; font-weight: 700; text-decoration-color: rgba(139,255,207,.5); text-underline-offset: .3em; }
+	.control-card { position: relative; overflow: hidden; border: 1px solid rgba(139,255,207,.35); border-radius: 18px; background: linear-gradient(145deg, rgba(20,48,61,.94), rgba(8,24,35,.96)); box-shadow: 24px 25px 55px rgba(0,0,0,.26), inset 0 1px rgba(255,255,255,.08); transform: rotate(1.5deg); }
+	.control-card::after { position: absolute; inset: 0; background: linear-gradient(120deg, transparent 30%, rgba(139,255,207,.08), transparent 65%); content: ""; transform: translateX(-100%); animation: sweep 7s ease-in-out infinite; }
+	.panel-bar, .panel-footer { display: flex; justify-content: space-between; padding: .7rem 1rem; color: #a5b9bd; border-bottom: 1px solid var(--line); font-size: .57rem; font-weight: 700; letter-spacing: .12em; }.panel-bar b { color: var(--accent); font-size: .56rem; }.panel-title { margin: 1.35rem 1rem .6rem; font-size: 1.45rem; font-weight: 700; letter-spacing: -.035em; }.control-card ul { padding: 0 1rem 1.1rem; margin: 0; list-style: none; }.control-card li { display: grid; grid-template-columns: .55rem 1fr auto; gap: .75rem; align-items: center; padding: .8rem 0; border-top: 1px solid var(--line); }.orb { width: .52rem; height: .52rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 15px currentColor; }.orb.violet { color: var(--violet); background: var(--violet); }.orb.coral { color: var(--coral); background: var(--coral); }.control-card li b, .control-card li small { display: block; }.control-card li b { color: #e7f5f0; font-size: .77rem; }.control-card li small { color: #91a9ad; font-size: .64rem; }.control-card li em { color: #71868a; font-size: .62rem; font-style: normal; }.panel-footer { border-top: 1px solid var(--line); border-bottom: 0; font-size: .5rem; }
+	.areas, .toolkit { padding: 5rem 0; border-top: 1px solid var(--line); }.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }.section-heading h2, .method h2, .toolkit h2, .closing h2 { max-width: 760px; margin: 0; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -.055em; }.area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }.area-card { min-height: 330px; padding: 1.35rem; border: 1px solid var(--line); border-radius: 14px; background: rgba(16,36,49,.64); transition: transform .2s ease, border-color .2s ease, background .2s ease; }.area-card:hover { border-color: rgba(139,255,207,.55); background: rgba(16,42,55,.94); transform: translateY(-5px); }.area-top { display: flex; justify-content: space-between; color: var(--accent); font-size: .65rem; font-weight: 700; letter-spacing: .12em; }.area-top b { color: #93a9ad; font-size: .6rem; }.diagram { display: flex; align-items: center; justify-content: center; gap: .35rem; height: 95px; }.diagram i, .diagram strong { padding: .42rem .52rem; border: 1px solid rgba(195,228,220,.28); border-radius: 5px; color: #b7c8ca; background: rgba(7,19,28,.4); font-size: .63rem; font-style: normal; letter-spacing: .06em; }.diagram strong { border-color: var(--accent); color: #062019; background: var(--accent); }.diagram u { width: 20px; height: 1px; background: #60777c; text-decoration: none; }.pipeline .diagram strong { border-color: var(--violet); background: var(--violet); }.sdk .diagram strong { border-color: var(--coral); background: var(--coral); }.area-card h3 { margin: .2rem 0 .55rem; font-size: 1.3rem; letter-spacing: -.035em; }.area-card p { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.6; }.area-card a { display: block; margin-top: 1rem; color: var(--accent); font-size: .76rem; font-weight: 700; }.source-note { display: flex; align-items: center; gap: .65rem; margin: 1.15rem 0 0; color: #8fa7ac; font-size: .76rem; }.source-note span { display: grid; width: 1.25rem; height: 1.25rem; place-items: center; border: 1px solid rgba(139,255,207,.5); border-radius: 50%; color: var(--accent); }
+	.method { display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 3rem; padding: clamp(2rem, 5vw, 3.5rem); border: 1px solid rgba(189,164,255,.35); border-radius: 16px; background: radial-gradient(circle at 80% 10%, rgba(189,164,255,.17), transparent 20rem), #101d2b; }.method .eyebrow { color: var(--violet); }.method .eyebrow i { background: var(--violet); box-shadow: 0 0 16px var(--violet); }.method > div > p:last-child { max-width: 650px; margin: 1rem 0 0; color: #a9bbc0; font-size: .9rem; }.method-flow { display: grid; gap: .7rem; }.method-flow span { display: flex; align-items: center; gap: .7rem; font-size: .82rem; font-weight: 700; }.method-flow b { display: grid; width: 1.55rem; height: 1.55rem; place-items: center; border-radius: 50%; color: #18202d; background: var(--violet); font-size: .58rem; }.method-flow i { margin-left: .75rem; color: var(--violet); font-style: normal; }
+	.toolkit-heading { max-width: 650px; }.toolkit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }.tool-card { min-height: 150px; padding: 1.3rem; border: 1px solid var(--line); border-radius: 12px; background: rgba(16,36,49,.5); }.tool-card > p { margin: 0 0 1rem; color: var(--accent); font-size: .62rem; font-weight: 700; letter-spacing: .12em; }.tags { display: flex; flex-wrap: wrap; gap: .42rem; }.tags span { padding: .3rem .5rem; border: 1px solid rgba(195,228,220,.18); border-radius: 999px; color: #c9d9d6; background: rgba(195,228,220,.05); font-size: .72rem; font-weight: 700; }.ai-card { border-color: rgba(255,158,125,.35); }.ai-card > p { color: var(--coral); }.ai-card h3 { margin: 0 0 .35rem; font-size: 1.2rem; }.ai-card > span { color: var(--muted); font-size: .8rem; line-height: 1.55; }
+	.closing { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: clamp(2rem, 5vw, 3.5rem); border-radius: 16px; background: var(--accent); color: #08221b; }.closing h2 { color: #08221b; }.closing .eyebrow { color: #235c4c; }.closing .eyebrow i { background: #235c4c; box-shadow: none; }.secondary { flex: 0 0 auto; color: var(--paper); background: #0b2531; }.secondary:hover { color: #fff; background: #183848; }
+	@keyframes sweep { 45%, 100% { transform: translateX(100%); } }
+	@media (max-width: 850px) { .hero { grid-template-columns: 1fr; }.control-card { width: min(100%, 440px); transform: rotate(.6deg); }.area-grid { grid-template-columns: 1fr; }.area-card { min-height: 0; }.method { grid-template-columns: 1fr; }.method-flow { display: flex; flex-wrap: wrap; align-items: center; }.method-flow i { margin: 0; }.toolkit-grid { grid-template-columns: 1fr 1fr; } }
+	@media (max-width: 650px) { .home { width: min(100% - 2rem, 1100px); }.hero { min-height: 0; padding: 4.5rem 0; }.section-heading, .closing { align-items: flex-start; flex-direction: column; }.areas, .toolkit { padding: 3.5rem 0; }.toolkit-grid { grid-template-columns: 1fr; }.method { gap: 2rem; }.method-flow { display: grid; }.closing { gap: 1.5rem; } }
 </style>
