@@ -7,33 +7,31 @@ const email = 'rosta.slechta@gmail.com';
 const mailSubject = encodeURIComponent('Spolupráce v testování');
 
 const services = [
-	['01', 'Analýza a návrh testů', 'Projdu požadavky, identifikuji důležité scénáře a připravím testovací analýzu, strategii a sadu testovacích scénářů – s ohledem na rizika a tempo vývoje.'],
-	['02', 'Manuální a funkční testování', 'Ověřím chování aplikace, práci s daty, chybové stavy i návaznosti mezi jednotlivými funkcemi.'],
-	['03', 'Automatizované testování', 'Připravím nebo rozšířím automatizované testy (především Playwright) pro opakované ověřování funkčnosti a regresní testování.'],
-	['04', 'Exekuce a vyhodnocení testů', 'Provedu testy, zaznamenám zjištěné problémy a připravím přehled výsledků včetně informací potřebných k jejich řešení.'],
-	['05', 'AI-augmented testing', 'Zapojím AI do návrhu a údržby testů, prioritizace podle rizika a validace AI-generovaného kódu. Self-healing a continuous feedback pomáhají držet tempo s rychlejším vývojem.'],
-	['06', 'Shift-left & Continuous Quality', 'Testování od designu a pull requestů, contract testing, integrace do CI/CD a risk-based strategie, aby se problémy chytaly dříve.'],
+	['01', 'Analýza a návrh testů', 'Projdu požadavky a rizika, identifikuji scénáře s největším dopadem a připravím strategii i sadu testů. Kde to dává smysl, využiji AI k rychlejšímu návrhu a prioritizaci.'],
+	['02', 'Funkční a explorativní testování', 'Ověřím chování aplikace, práci s daty, chybové stavy a návaznosti mezi funkcemi. Kombinuji systematické scénáře s explorací, která odhalí to, co skripty minou.'],
+	['03', 'Automatizace a continuous quality', 'Připravím a udržuji automatizované testy (především Playwright a API), zapojené do CI/CD. Cílem je rychlá zpětná vazba při každé změně, ne jen sada skriptů na konci sprintu.'],
+	['04', 'Exekuce, reporting a ověření oprav', 'Provedu testy, srozumitelně popíšu problémy včetně reprodukce a ověřím, že opravy fungují. Výsledkem je jasný obraz o stavu aplikace, ne jen seznam bugů.'],
 ];
 
 const areas = [
-	['Webové aplikace — FE a BE', 'Testování frontendové i backendové části, funkčnosti, validací, práce s daty a návazností mezi komponentami. Funkční, integrační, regresní a end-to-end testy (Playwright).'],
-	['CI/CD pipeline', 'Ověřování procesů buildu, validací, generování a publikace artefaktů. Testování chybových stavů a návazností mezi jednotlivými kroky automatizovaného procesu.'],
-	['API — REST a SOAP', 'Ověřování API, requestů a response, datových struktur, validací, chybových odpovědí a komunikace mezi systémy. API-first přístup.'],
-	['Java a .NET SDK', 'Testování klientských knihoven a integračních řešení, včetně REST/SOAP komunikace, zpracování chyb a návazností na další systémy.'],
+	['Webové aplikace — FE a BE', 'Funkční, integrační, regresní a end-to-end testy frontendové i backendové části. Hlavní nástroj pro UI automatizaci: Playwright.'],
+	['API a integrace', 'REST a SOAP — requesty, response, datové struktury, validace a chybové stavy. API-first přístup, protože problémy je lepší chytit dříve než na UI.'],
+	['CI/CD pipeline', 'Ověření buildu, validací, artefaktů a návazností mezi kroky. Testování jako součást pipeline, ne až po ní.'],
+	['Java a .NET SDK', 'Testování klientských knihoven a integračních řešení včetně komunikace, zpracování chyb a návazností na další systémy.'],
 ];
 
 const steps = [
-	['01', 'Pochopení požadavků', 'Seznámím se s řešením, jeho funkčností a očekávaným chováním – včetně kontextu AI-generovaného kódu.'],
-	['02', 'Návrh testovacího přístupu', 'Připravím scénáře podle rizik, důležitosti funkčnosti a potřeb projektu. Kde to dává smysl, zapojím AI do návrhu.'],
-	['03', 'Provedení testů', 'Kombinuji manuální a automatizované testování (Playwright, API) podle toho, co je pro danou oblast nejvhodnější.'],
-	['04', 'Vyhodnocení a ověření oprav', 'Zdokumentuji výsledky, pomohu s reprodukcí chyb a ověřím, že provedené změny fungují správně.'],
+	['01', 'Pochopení kontextu', 'Seznámím se s řešením, jeho funkčností, riziky a tím, jak se vyvíjí – včetně dopadu rychlejších změn a AI-generovaného kódu.'],
+	['02', 'Návrh podle rizik', 'Scénáře stavím podle toho, co může selhat a co má největší dopad. Ne testuji všechno – testuji to, co má smysl.'],
+	['03', 'Provedení a automatizace', 'Kombinuji manuální a automatizované testování. Automatizaci držím v CI/CD, aby dávala zpětnou vazbu průběžně.'],
+	['04', 'Vyhodnocení a uzavření', 'Zdokumentuji výsledky, pomohu s reprodukcí chyb a ověřím opravy. Cílem je srozumitelný stav kvality, ne objem reportů.'],
 ];
 ---
 
 <!doctype html>
 <html lang="cs">
 	<head>
-		<BaseHead title="Rostislav Šlechta | Quality Engineer" description="Quality Engineering a AI-augmented testing pro webové aplikace, API, Playwright a CI/CD. Moderní testování, které drží tempo s AI vývojem." />
+		<BaseHead title="Rostislav Šlechta | Quality Engineer" description="Quality Engineering pro webové aplikace, API a CI/CD. Playwright, risk-based přístup a testování, které drží tempo s vývojem." />
 	</head>
 	<body>
 		<Header />
@@ -41,24 +39,24 @@ const steps = [
 			<section class="hero" id="uvod" aria-labelledby="hero-title">
 				<div class="hero-copy">
 					<p class="eyebrow">ROSTISLAV ŠLECHTA · QUALITY ENGINEER</p>
-					<h1 id="hero-title">Quality Engineering pro éru AI-generovaného kódu.</h1>
-					<p class="intro">Pomáhám týmům držet kvalitu i při rychlejším vývoji. Od analýzy a návrhu testů přes manuální a automatizované testování (Playwright, API) až po AI-augmented přístup a continuous quality v CI/CD.</p>
-					<p class="scope">Webové aplikace · API · Playwright · CI/CD · AI-augmented testing</p>
+					<h1 id="hero-title">Testování, které drží tempo s vývojem.</h1>
+					<p class="intro">Pomáhám ověřit, že aplikace funguje tak, jak má – i když se mění rychle. Od analýzy rizik a návrhu scénářů přes automatizaci v CI/CD až po jasné vyhodnocení. Pracuji risk-based: ne testuji všechno, testuji to, co má smysl.</p>
+					<p class="scope">Webové aplikace · API · Playwright · CI/CD</p>
 					<div class="actions"><a class="button button-primary" href={`mailto:${email}?subject=${mailSubject}`}>Probrat možnosti spolupráce <span aria-hidden="true">→</span></a><a class="button button-secondary" href="#oblasti">Oblasti testování</a></div>
 				</div>
 				<aside class="hero-note" aria-label="Co mohu pomoci ověřit">
 					<h2>Aplikace musí fungovat. Build nestačí.</h2>
-					<p class="hero-note-intro">Samotný úspěšný build ještě neznamená, že je všechno v pořádku. Ověřuji chování aplikací, komunikaci mezi systémy i dopady změn – včetně kódu generovaného AI.</p>
+					<p class="hero-note-intro">Úspěšný build neznamená, že je vše v pořádku. Ověřuji chování aplikace, komunikaci mezi systémy a dopady změn – dříve, než se problém projeví u uživatele.</p>
 					<ul>
 						<li><strong>Funkčnost v praxi</strong><span>ověření, že aplikace dělá to, co má.</span></li>
 						<li><strong>Spolehlivé integrace</strong><span>kontrola komunikace a datových návazností mezi systémy.</span></li>
-						<li><strong>Jistota při změnách</strong><span>regresní a automatizované testy, které pomáhají odhalit nechtěné vedlejší dopady.</span></li>
+						<li><strong>Jistota při změnách</strong><span>regresní a automatizované testy v pipeline, které zachytí nechtěné dopady brzy.</span></li>
 					</ul>
 				</aside>
 			</section>
 
 			<section class="section services" id="sluzby" aria-labelledby="services-title">
-				<div class="section-heading"><p class="eyebrow">CO PRO VÁS ZAJISTÍM</p><h2 id="services-title">Testování od prvního scénáře až po continuous quality.</h2><p>Každý projekt potřebuje jiný rozsah testování. Pomohu určit, co je potřeba ověřit, připravit vhodné testovací scénáře a provést testy tak, aby jejich výsledky přinesly konkrétní informace o kvalitě řešení – i v době AI-generovaného kódu.</p></div>
+				<div class="section-heading"><p class="eyebrow">CO PRO VÁS ZAJISTÍM</p><h2 id="services-title">Od analýzy rizik až po continuous quality.</h2><p>Každý projekt potřebuje jiný rozsah. Pomohu určit, co má smysl ověřit, připravit scénáře a automatizaci a dodat výsledky, ze kterých se dá rozhodovat – ne jen reporty pro archiv.</p></div>
 				<div class="service-grid">{services.map(([number, title, text]) => <article class="service-card"><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
 			</section>
 
@@ -75,11 +73,11 @@ const steps = [
 
 			<section class="section about" id="o-mne" aria-labelledby="about-title">
 				<div class="about-profile"><div class="section-heading"><p class="eyebrow">O MNĚ</p><h2 id="about-title">Rostislav Šlechta — Quality Engineer</h2></div><img class="about-portrait" src="/rostislav-slechta.webp" alt="Rostislav Šlechta na terase u moře" width="840" height="1050" loading="lazy" decoding="async" /></div>
-				<div class="about-copy"><p>Věnuji se testování softwaru v bankovním prostředí, kde se setkávají webové aplikace, API, integrační řešení a automatizované vývojové procesy.</p><p>Mám zkušenosti s návrhem testovacích scénářů, manuálním ověřováním funkčnosti, automatizovanými testy i testováním komplexních návazností mezi systémy.</p><p>Při práci využívám nástroje jako Playwright, Mocha, Postman a JMeter. Kde to dává smysl, zapojuji AI (ChatGPT, Claude, Gemini) do návrhu a prioritizace testů. Zaměřuji se také na testování Java a .NET SDK a na ověřování funkčnosti CI/CD pipeline.</p><p><strong>Důležité je pro mě nejen chybu najít, ale také ji spolehlivě reprodukovat, srozumitelně popsat a ověřit její odstranění.</strong></p></div>
+				<div class="about-copy"><p>Věnuji se testování softwaru v bankovním prostředí – webové aplikace, API, integrační řešení a automatizované vývojové procesy.</p><p>Pracuji risk-based: nejdřív pochopím, co může selhat a proč to záleží, pak navrhnu a provedu testy, které na to cílí. Automatizaci stavím tak, aby běžela v CI/CD a dávala zpětnou vazbu průběžně.</p><p>Používám Playwright, Postman, JMeter a další nástroje podle potřeby. Kde to zrychlí práci bez ztráty kvality, zapojuji AI do návrhu scénářů a prioritizace. Zaměřuji se také na Java a .NET SDK a na funkčnost CI/CD pipeline.</p><p><strong>Důležité je pro mě nejen chybu najít, ale také ji spolehlivě reprodukovat, srozumitelně popsat a ověřit její odstranění.</strong></p></div>
 			</section>
 
 			<section class="contact" id="kontakt" aria-labelledby="contact-title">
-				<div><p class="eyebrow">KONTAKT</p><h2 id="contact-title">Potřebujete quality, která drží tempo s AI vývojem?</h2><p>Ať už potřebujete otestovat novou funkcionalitu, připravit automatizované testy, zapojit AI do procesu nebo získat lepší přehled o kvalitě svého řešení, můžeme probrat, co váš projekt potřebuje.</p></div>
+				<div><p class="eyebrow">KONTAKT</p><h2 id="contact-title">Potřebujete testování, které drží tempo s vývojem?</h2><p>Ať už potřebujete otestovat novou funkcionalitu, postavit automatizaci do CI/CD, nebo získat jasnější obraz o kvalitě řešení – můžeme probrat, co má pro váš projekt smysl.</p></div>
 				<a class="button button-dark" href={`mailto:${email}?subject=${mailSubject}`}>Kontaktovat Rostislava <span aria-hidden="true">→</span></a>
 			</section>
 		</main>
