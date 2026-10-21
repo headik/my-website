@@ -7,31 +7,31 @@ const email = 'rosta.slechta@gmail.com';
 const mailSubject = encodeURIComponent('Spolupráce v testování');
 
 const services = [
-	['01', 'Analýza a návrh testů', 'Projdu požadavky a rizika, identifikuji scénáře s největším dopadem a připravím strategii i sadu testů. Kde to dává smysl, využiji AI k rychlejšímu návrhu a prioritizaci.'],
-	['02', 'Funkční a explorativní testování', 'Ověřím chování aplikace, práci s daty, chybové stavy a návaznosti mezi funkcemi. Kombinuji systematické scénáře s explorací, která odhalí to, co skripty minou.'],
-	['03', 'Automatizace a continuous quality', 'Připravím a udržuji automatizované testy (především Playwright a API), zapojené do CI/CD. Cílem je rychlá zpětná vazba při každé změně, ne jen sada skriptů na konci sprintu.'],
-	['04', 'Exekuce, reporting a ověření oprav', 'Provedu testy, srozumitelně popíšu problémy včetně reprodukce a ověřím, že opravy fungují. Výsledkem je jasný obraz o stavu aplikace, ne jen seznam bugů.'],
+	['01', 'Najdu, co se může pokazit', 'Projdu požadavky, rizika a reálné scénáře. Nepíšu testy pro každé tlačítko – stavím ty, které mají šanci zachytit skutečný problém.'],
+	['02', 'Rozbiju to dřív než uživatel', 'Manuálně i explorativně. Procházím happy path i cesty, na které nikdo nemyslel. Když to má spadnout, ať to spadne u mě.'],
+	['03', 'Automatizace, co běží sama', 'Playwright, API testy, CI/CD. Ne sada skriptů, kterou někdo spouští jednou za sprint – pipeline, která křičí hned, když se něco rozbije.'],
+	['04', 'Bug, kterému jde rozumět', 'Nestačí napsat „nefunguje“. Reprodukce, kontext, dopad. A ověření, že oprava opravdu opravila – ne že jen zmizela z boardu.'],
 ];
 
 const areas = [
-	['Webové aplikace — FE a BE', 'Funkční, integrační, regresní a end-to-end testy frontendové i backendové části. Hlavní nástroj pro UI automatizaci: Playwright.'],
-	['API a integrace', 'REST a SOAP — requesty, response, datové struktury, validace a chybové stavy. API-first přístup, protože problémy je lepší chytit dříve než na UI.'],
-	['CI/CD pipeline', 'Ověření buildu, validací, artefaktů a návazností mezi kroky. Testování jako součást pipeline, ne až po ní.'],
-	['Java a .NET SDK', 'Testování klientských knihoven a integračních řešení včetně komunikace, zpracování chyb a návazností na další systémy.'],
+	['Web — FE i BE', 'Od UI po backend. Funkční, integrační, regresní, E2E. Playwright jako základ, protože Selenium už patří do muzea.'],
+	['API a integrace', 'REST, SOAP, datové kontrakty, chybové stavy. Problém chycený na API je levnější než ten samý na obrazovce.'],
+	['CI/CD pipeline', 'Build, validace, artefakty, návaznosti. Testování uvnitř pipeline, ne až když „je čas na QA“.'],
+	['Java / .NET SDK', 'Klientské knihovny, integrace, edge case. To, co vypadá jako detail v SDK, dokáže shodit celou integraci.'],
 ];
 
 const steps = [
-	['01', 'Pochopení kontextu', 'Seznámím se s řešením, jeho funkčností, riziky a tím, jak se vyvíjí – včetně dopadu rychlejších změn a AI-generovaného kódu.'],
-	['02', 'Návrh podle rizik', 'Scénáře stavím podle toho, co může selhat a co má největší dopad. Ne testuji všechno – testuji to, co má smysl.'],
-	['03', 'Provedení a automatizace', 'Kombinuji manuální a automatizované testování. Automatizaci držím v CI/CD, aby dávala zpětnou vazbu průběžně.'],
-	['04', 'Vyhodnocení a uzavření', 'Zdokumentuji výsledky, pomohu s reprodukcí chyb a ověřím opravy. Cílem je srozumitelný stav kvality, ne objem reportů.'],
+	['01', 'Nejdřív pochopit', 'Co to dělá, pro koho, a kde to bolí, když to nefunguje. Bez toho jsou testy jen checklist.'],
+	['02', 'Pak mířit', 'Scénáře podle rizik a dopadu. Ne „otestovat všechno“ – otestovat to, co může ublížit.'],
+	['03', 'Pak to spustit', 'Manuál + automatizace. Co se opakuje, patří do pipeline. Co je jednorázové a chytré, patří do hlavý.'],
+	['04', 'Nakonec uzavřít', 'Jasný stav, reprodukovatelné bugy, ověřené opravy. Žádné „možná to někde je“.'],
 ];
 ---
 
 <!doctype html>
 <html lang="cs">
 	<head>
-		<BaseHead title="Rostislav Šlechta | Quality Engineer" description="Quality Engineering pro webové aplikace, API a CI/CD. Playwright, risk-based přístup a testování, které drží tempo s vývojem." />
+		<BaseHead title="Rostislav Šlechta | Quality Engineer" description="Najdu bug dřív, než ho najde produkce. Quality Engineering pro web, API a CI/CD — Playwright, risk-based, bez zbytečného divadla." />
 	</head>
 	<body>
 		<Header />
@@ -39,46 +39,46 @@ const steps = [
 			<section class="hero" id="uvod" aria-labelledby="hero-title">
 				<div class="hero-copy">
 					<p class="eyebrow">ROSTISLAV ŠLECHTA · QUALITY ENGINEER</p>
-					<h1 id="hero-title">Testování, které drží tempo s vývojem.</h1>
-					<p class="intro">Pomáhám ověřit, že aplikace funguje tak, jak má – i když se mění rychle. Od analýzy rizik a návrhu scénářů přes automatizaci v CI/CD až po jasné vyhodnocení. Pracuji risk-based: ne testuji všechno, testuji to, co má smysl.</p>
-					<p class="scope">Webové aplikace · API · Playwright · CI/CD</p>
-					<div class="actions"><a class="button button-primary" href={`mailto:${email}?subject=${mailSubject}`}>Probrat možnosti spolupráce <span aria-hidden="true">→</span></a><a class="button button-secondary" href="#oblasti">Oblasti testování</a></div>
+					<h1 id="hero-title">Najdu bug dřív, než ho najde produkce.</h1>
+					<p class="intro">Testuju software v prostředí, kde chyba není „jen bug“ – je to riziko. Stavím scénáře podle toho, co může ublížit, automatizaci tak, aby běžela sama, a reporty tak, aby jim šlo rozumět. Bez checklistů pro checklisty.</p>
+					<p class="scope">Web · API · Playwright · CI/CD · bankovní realita</p>
+					<div class="actions"><a class="button button-primary" href={`mailto:${email}?subject=${mailSubject}`}>Napište, co se má pokazit <span aria-hidden="true">→</span></a><a class="button button-secondary" href="#sluzby">Co umím</a></div>
 				</div>
-				<aside class="hero-note" aria-label="Co mohu pomoci ověřit">
-					<h2>Aplikace musí fungovat. Build nestačí.</h2>
-					<p class="hero-note-intro">Úspěšný build neznamená, že je vše v pořádku. Ověřuji chování aplikace, komunikaci mezi systémy a dopady změn – dříve, než se problém projeví u uživatele.</p>
-					<ul>
-						<li><strong>Funkčnost v praxi</strong><span>ověření, že aplikace dělá to, co má.</span></li>
-						<li><strong>Spolehlivé integrace</strong><span>kontrola komunikace a datových návazností mezi systémy.</span></li>
-						<li><strong>Jistota při změnách</strong><span>regresní a automatizované testy v pipeline, které zachytí nechtěné dopady brzy.</span></li>
-					</ul>
-				</aside>
+				<div class="hero-photo">
+					<img src="/rostislav-slechta.webp" alt="Rostislav Šlechta" width="840" height="1050" decoding="async" />
+				</div>
 			</section>
 
 			<section class="section services" id="sluzby" aria-labelledby="services-title">
-				<div class="section-heading"><p class="eyebrow">CO PRO VÁS ZAJISTÍM</p><h2 id="services-title">Od analýzy rizik až po continuous quality.</h2><p>Každý projekt potřebuje jiný rozsah. Pomohu určit, co má smysl ověřit, připravit scénáře a automatizaci a dodat výsledky, ze kterých se dá rozhodovat – ne jen reporty pro archiv.</p></div>
+				<div class="section-heading"><p class="eyebrow">CO UMÍM</p><h2 id="services-title">Čtyři věci. Žádné buzzword menu.</h2><p>Neslibuju, že otestuju „všechno“. Slibuju, že budu mířit tam, kde to má smysl – a že výsledek půjde použít, ne jen archivovat.</p></div>
 				<div class="service-grid">{services.map(([number, title, text]) => <article class="service-card"><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
 			</section>
 
 			<section class="section areas" id="oblasti" aria-labelledby="areas-title">
-				<div class="section-heading"><p class="eyebrow">OBLASTI TESTOVÁNÍ</p><h2 id="areas-title">Od uživatelského rozhraní až po integrace.</h2></div>
+				<div class="section-heading"><p class="eyebrow">KDE TO DĚLÁM</p><h2 id="areas-title">Od tlačítka až po pipeline.</h2></div>
 				<div class="area-grid">{areas.map(([title, text]) => <article class="area-card"><div class="card-mark" aria-hidden="true"></div><h3>{title}</h3><p>{text}</p></article>)}</div>
 			</section>
 
 			<section class="section approach" id="pristup" aria-labelledby="approach-title">
-				<div class="section-heading"><p class="eyebrow">JAK PRACUJI</p><h2 id="approach-title">Testování musí dávat smysl, ne jen generovat reporty.</h2><p>Nejde o to otestovat všechno za každou cenu. Důležité je pochopit, co aplikace dělá, kde může selhat a které scénáře mají největší význam.</p></div>
+				<div class="section-heading"><p class="eyebrow">JAK TO FUNGUJE</p><h2 id="approach-title">Míň divadla. Víc signálu.</h2><p>Green build není zelená pro uživatele. Proto netestuju „na objem“ – testuju na riziko a dopad.</p></div>
 				<ol class="steps">{steps.map(([number, title, text]) => <li><span>{number}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol>
-				<p class="outcome">Cílem je mít přehled o skutečném stavu aplikace a snížit riziko, že se problém projeví až po nasazení.</p>
+				<p class="outcome">Cíl je jednoduchý: vědět, v jakém stavu aplikace je, a snížit šanci, že první, kdo najde chybu, bude zákazník.</p>
 			</section>
 
 			<section class="section about" id="o-mne" aria-labelledby="about-title">
-				<div class="about-profile"><div class="section-heading"><p class="eyebrow">O MNĚ</p><h2 id="about-title">Rostislav Šlechta — Quality Engineer</h2></div><img class="about-portrait" src="/rostislav-slechta.webp" alt="Rostislav Šlechta na terase u moře" width="840" height="1050" loading="lazy" decoding="async" /></div>
-				<div class="about-copy"><p>Věnuji se testování softwaru v bankovním prostředí – webové aplikace, API, integrační řešení a automatizované vývojové procesy.</p><p>Pracuji risk-based: nejdřív pochopím, co může selhat a proč to záleží, pak navrhnu a provedu testy, které na to cílí. Automatizaci stavím tak, aby běžela v CI/CD a dávala zpětnou vazbu průběžně.</p><p>Používám Playwright, Postman, JMeter a další nástroje podle potřeby. Kde to zrychlí práci bez ztráty kvality, zapojuji AI do návrhu scénářů a prioritizace. Zaměřuji se také na Java a .NET SDK a na funkčnost CI/CD pipeline.</p><p><strong>Důležité je pro mě nejen chybu najít, ale také ji spolehlivě reprodukovat, srozumitelně popsat a ověřit její odstranění.</strong></p></div>
+				<div class="about-inner">
+					<div class="section-heading"><p class="eyebrow">O MNĚ</p><h2 id="about-title">Rostislav Šlechta</h2></div>
+					<div class="about-copy">
+						<p>Quality Engineer v bankovním prostředí. Web, API, integrace, pipeline. Místa, kde „ono to někdy spadne“ není vtip.</p>
+						<p>Pracuju risk-based: nejdřív zjistím, co se může pokazit a proč na tom záleží. Pak to otestuju – manuálně, automatizovaně, v CI/CD. Playwright, Postman, JMeter, Java/.NET SDK. AI použiju, když zrychlí návrh nebo prioritizaci. Nepoužiju ji jako výmluvu za povrchní práci.</p>
+						<p><strong>Bug nestačí najít. Musí se dát zopakovat, pochopit a ověřit, že je pryč.</strong></p>
+					</div>
+				</div>
 			</section>
 
 			<section class="contact" id="kontakt" aria-labelledby="contact-title">
-				<div><p class="eyebrow">KONTAKT</p><h2 id="contact-title">Potřebujete testování, které drží tempo s vývojem?</h2><p>Ať už potřebujete otestovat novou funkcionalitu, postavit automatizaci do CI/CD, nebo získat jasnější obraz o kvalitě řešení – můžeme probrat, co má pro váš projekt smysl.</p></div>
-				<a class="button button-dark" href={`mailto:${email}?subject=${mailSubject}`}>Kontaktovat Rostislava <span aria-hidden="true">→</span></a>
+				<div><p class="eyebrow">KONTAKT</p><h2 id="contact-title">Máte aplikaci. Máte tempo. Chcete jistotu?</h2><p>Nová funkcionalita, automatizace do pipeline, přehled o kvalitě před releasem. Napište – řekneme si, co má smysl testovat a co ne.</p></div>
+				<a class="button button-dark" href={`mailto:${email}?subject=${mailSubject}`}>Ozvat se <span aria-hidden="true">→</span></a>
 			</section>
 		</main>
 		<Footer />
@@ -87,18 +87,18 @@ const steps = [
 
 <style>
 	main { width: 100%; max-width: none; padding: 0 0 5rem; }
-	.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .65fr); align-items: center; gap: clamp(3rem, 8vw, 8rem); min-height: 660px; padding: clamp(5rem, 9vw, 7rem) max(1.5rem, calc((100vw - 1120px) / 2)); color: var(--white); background: var(--primary-dark); }
+	.hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(260px, .55fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); min-height: 640px; padding: clamp(4rem, 8vw, 6.5rem) max(1.5rem, calc((100vw - 1120px) / 2)); color: var(--white); background: var(--primary-dark); }
 	.eyebrow { margin: 0 0 .9rem; color: var(--accent); font-size: .75rem; font-weight: 600; letter-spacing: .1em; }
-	h1, h2 { letter-spacing: -.04em; } h1 { max-width: 780px; margin: 0; color: var(--white); font-size: clamp(2.75rem, 5vw, 3.5rem); line-height: 1.14; } h2 { max-width: 790px; margin: 0; color: var(--primary-dark); font-size: clamp(2rem, 3vw, 2.5rem); line-height: 1.2; }
-	.intro { max-width: 670px; margin: 1.5rem 0 0; color: var(--gray-200); font-size: 1rem; line-height: 1.75; }.scope { margin: 1.4rem 0 0; color: var(--white); font-size: .875rem; font-weight: 600; letter-spacing: .02em; }
-	.actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.25rem; }.button { display: inline-flex; align-items: center; justify-content: center; gap: .8rem; padding: .75rem 1.15rem; border: 1px solid transparent; border-radius: 999px; font-size: .875rem; font-weight: 600; text-decoration: none; transition: background .16s ease, border-color .16s ease, transform .16s ease; }.button:hover { transform: translateY(-1px); }.button-primary { color: var(--primary-dark); background: var(--accent); }.button-primary:hover { color: var(--primary-dark); background: var(--accent); filter: brightness(.94); }.button-secondary { border-color: rgba(255,255,255,.45); color: var(--white); background: transparent; }.button-secondary:hover { border-color: var(--accent); color: var(--white); }
-	.hero-note { padding: clamp(1.25rem, 2.5vw, 1.75rem); border: 1px solid rgba(255,255,255,.22); border-radius: 8px; background: var(--gray-900); }.hero-note h2 { margin: 0; color: var(--white); font-size: clamp(1.45rem, 2.5vw, 2rem); line-height: 1.2; letter-spacing: -.03em; }.hero-note-intro { margin: .9rem 0 0; color: var(--gray-200); font-size: .875rem; line-height: 1.65; }.hero-note ul { display: grid; gap: .85rem; padding: 0; margin: 1.15rem 0 0; list-style: none; }.hero-note li { display: grid; gap: .12rem; padding-top: .8rem; border-top: 1px solid rgba(255,255,255,.2); }.hero-note li strong { color: var(--white); font-size: .875rem; line-height: 1.4; }.hero-note li span { color: var(--gray-200); font-size: .8125rem; line-height: 1.5; }
-	.section { width: min(100% - 3rem, 1120px); margin: 0 auto; padding: 5rem 0; border-top: 1px solid var(--line); scroll-margin-top: 2rem; }.section-heading > p:last-child { max-width: 690px; margin: 1rem 0 0; color: var(--muted); font-size: 1rem; line-height: 1.75; }.section .eyebrow { color: var(--primary-dark); }.service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.5rem; }.service-card { padding: 1.5rem; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }.service-card > span { color: var(--primary-dark); font-size: .75rem; font-weight: 600; letter-spacing: .1em; }.service-card h3, .area-card h3, .steps h3 { margin: 1.4rem 0 .55rem; color: var(--primary-dark); font-size: 1.75rem; letter-spacing: -.025em; line-height: 1.3; }.service-card p, .area-card p, .steps p { margin: 0; color: var(--gray-600); font-size: .875rem; line-height: 1.7; }
-	.area-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.5rem; }.area-card { min-height: 220px; padding: 1.5rem; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }.card-mark { width: 2.2rem; height: .25rem; border-radius: 999px; background: var(--accent); }.area-card h3 { margin-top: 1.5rem; }
+	h1, h2 { letter-spacing: -.04em; } h1 { max-width: 720px; margin: 0; color: var(--white); font-size: clamp(2.5rem, 4.8vw, 3.35rem); line-height: 1.12; } h2 { max-width: 790px; margin: 0; color: var(--primary-dark); font-size: clamp(2rem, 3vw, 2.5rem); line-height: 1.2; }
+	.intro { max-width: 640px; margin: 1.4rem 0 0; color: var(--gray-200); font-size: 1rem; line-height: 1.75; }.scope { margin: 1.25rem 0 0; color: var(--white); font-size: .875rem; font-weight: 600; letter-spacing: .02em; }
+	.actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }.button { display: inline-flex; align-items: center; justify-content: center; gap: .8rem; padding: .75rem 1.15rem; border: 1px solid transparent; border-radius: 999px; font-size: .875rem; font-weight: 600; text-decoration: none; transition: background .16s ease, border-color .16s ease, transform .16s ease; }.button:hover { transform: translateY(-1px); }.button-primary { color: var(--primary-dark); background: var(--accent); }.button-primary:hover { color: var(--primary-dark); background: var(--accent); filter: brightness(.94); }.button-secondary { border-color: rgba(255,255,255,.45); color: var(--white); background: transparent; }.button-secondary:hover { border-color: var(--accent); color: var(--white); }
+	.hero-photo { justify-self: end; width: min(100%, 340px); }.hero-photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 32%; border-radius: 12px; border: 1px solid rgba(255,255,255,.18); box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+	.section { width: min(100% - 3rem, 1120px); margin: 0 auto; padding: 5rem 0; border-top: 1px solid var(--line); scroll-margin-top: 2rem; }.section-heading > p:last-child { max-width: 690px; margin: 1rem 0 0; color: var(--muted); font-size: 1rem; line-height: 1.75; }.section .eyebrow { color: var(--primary-dark); }.service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.5rem; }.service-card { padding: 1.5rem; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }.service-card > span { color: var(--primary-dark); font-size: .75rem; font-weight: 600; letter-spacing: .1em; }.service-card h3, .area-card h3, .steps h3 { margin: 1.2rem 0 .55rem; color: var(--primary-dark); font-size: 1.55rem; letter-spacing: -.025em; line-height: 1.3; }.service-card p, .area-card p, .steps p { margin: 0; color: var(--gray-600); font-size: .875rem; line-height: 1.7; }
+	.area-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.5rem; }.area-card { min-height: 200px; padding: 1.5rem; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }.card-mark { width: 2.2rem; height: .25rem; border-radius: 999px; background: var(--accent); }.area-card h3 { margin-top: 1.35rem; }
 	.approach { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(2rem, 7vw, 7rem); align-items: start; padding: 3rem; border: 1px solid var(--gray-200); border-radius: 8px; background: var(--gray-200); }.approach .eyebrow { color: var(--primary-dark); }.steps { display: grid; gap: 1rem; padding: 0; margin: 0; list-style: none; }.steps li { display: grid; grid-template-columns: 2.4rem 1fr; gap: 1rem; padding-bottom: 1.1rem; border-bottom: 1px solid #cbd0d7; }.steps li > span { color: #13752a; font-size: .75rem; font-weight: 600; }.steps h3 { margin: 0 0 .35rem; }.outcome { grid-column: 2; max-width: 630px; margin: 0; padding: 1.1rem 0 0; color: var(--gray-900); font-size: .9375rem; font-weight: 600; line-height: 1.7; }
-	.about { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(2rem, 7vw, 7rem); align-items: start; }.about-profile { display: grid; gap: 1.5rem; }.about-portrait { display: block; width: 100%; max-width: 380px; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 38%; border-radius: 8px; }.about-copy { max-width: 670px; }.about-copy p { margin: 0 0 1.1rem; color: var(--gray-600); line-height: 1.75; }.about-copy strong { color: var(--primary-dark); }
+	.about { border-top: 1px solid var(--line); }.about-inner { max-width: 720px; }.about-copy p { margin: 0 0 1.1rem; color: var(--gray-600); line-height: 1.75; }.about-copy strong { color: var(--primary-dark); }
 	.contact { width: min(100% - 3rem, 1120px); margin: 0 auto; display: flex; align-items: end; justify-content: space-between; gap: 2rem; padding: clamp(2rem, 5vw, 4rem); border-radius: 8px; color: var(--white); background: var(--primary-dark); scroll-margin-top: 2rem; }.contact .eyebrow { color: var(--accent); }.contact h2 { color: var(--white); }.contact p:last-child { max-width: 680px; margin: 1rem 0 0; color: var(--gray-200); line-height: 1.7; }.button-dark { flex: 0 0 auto; color: var(--primary-dark); background: var(--accent); }.button-dark:hover { color: var(--primary-dark); background: var(--accent); filter: brightness(.94); }
-	@media (max-width: 880px) { .hero, .approach, .about { grid-template-columns: 1fr; }.hero { min-height: 0; }.hero-note { max-width: 500px; }.service-grid { grid-template-columns: repeat(2, 1fr); }.outcome { grid-column: auto; }.about { gap: 1rem; } }
-	@media (max-width: 720px) { .service-card h3, .area-card h3, .steps h3 { font-size: 1.4rem; } }
-	@media (max-width: 620px) { .hero { padding: 4.5rem 1rem; }.section { width: min(100% - 2rem, 1120px); padding: 4rem 0; }.service-grid, .area-grid { grid-template-columns: 1fr; }.approach { padding: 1.5rem; }.contact { width: min(100% - 2rem, 1120px); align-items: flex-start; flex-direction: column; }.button-dark { width: 100%; }.scope { line-height: 1.8; } }
+	@media (max-width: 880px) { .hero, .approach { grid-template-columns: 1fr; }.hero { min-height: 0; }.hero-photo { justify-self: start; width: min(100%, 280px); order: -1; }.service-grid { grid-template-columns: repeat(2, 1fr); }.outcome { grid-column: auto; } }
+	@media (max-width: 720px) { .service-card h3, .area-card h3, .steps h3 { font-size: 1.3rem; } }
+	@media (max-width: 620px) { .hero { padding: 3.5rem 1rem 4rem; }.section { width: min(100% - 2rem, 1120px); padding: 4rem 0; }.service-grid, .area-grid { grid-template-columns: 1fr; }.approach { padding: 1.5rem; }.contact { width: min(100% - 2rem, 1120px); align-items: flex-start; flex-direction: column; }.button-dark { width: 100%; }.scope { line-height: 1.8; } }
 </style>
