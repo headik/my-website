@@ -3,14 +3,92 @@ const year = new Date().getFullYear();
 ---
 
 <footer>
-	<p>© {year} Rostislav Šlechta <span aria-hidden="true">·</span> Quality Engineer</p>
-	<a href="#kontakt">Kontakt <span aria-hidden="true">↑</span></a>
+	<div class="footer-inner">
+		<div class="footer-brand">
+			<span class="footer-name">Rosta Šlechta</span>
+			<span class="footer-role">Softwarové testování · API · integrace</span>
+		</div>
+		<nav class="footer-nav" aria-label="Patička">
+			<a href="#co-testuju">Co testuju</a>
+			<a href="#jak-pracuju">Jak pracuju</a>
+			<a href="#o-mne">O mně</a>
+			<a href="#kontakt">Kontakt</a>
+		</nav>
+		<p class="footer-copy">© {year} Rostislav Šlechta</p>
+	</div>
 </footer>
 
 <style>
-	footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; max-width: 1100px; margin: 0 auto; padding: 1.7rem 1.5rem; border-top: 1px solid var(--gray-200); color: var(--gray-600); font-size: .85rem; }
-	footer p { margin: 0; }
-	footer a { color: var(--primary-dark); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: .2em; }
-	footer a:hover { color: var(--gray-600); }
-	@media (max-width: 480px) { footer { margin: 0 1rem; padding: 1.5rem 0; } }
+	footer {
+		border-top: 1px solid var(--line-dark);
+		background: var(--bg);
+		color: var(--text-secondary-dark);
+	}
+
+	.footer-inner {
+		display: grid;
+		grid-template-columns: 1fr auto auto;
+		align-items: center;
+		gap: 1.5rem;
+		max-width: 1120px;
+		margin: 0 auto;
+		padding: 1.75rem 1.5rem;
+	}
+
+	.footer-brand {
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+	}
+
+	.footer-name {
+		font-weight: 700;
+		color: var(--text-on-dark);
+		font-size: 0.95rem;
+		letter-spacing: -0.02em;
+	}
+
+	.footer-role {
+		font-size: 0.78rem;
+		color: var(--text-secondary-dark);
+	}
+
+	.footer-nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 1rem;
+	}
+
+	.footer-nav a {
+		color: var(--text-secondary-dark);
+		text-decoration: none;
+		font-size: 0.85rem;
+		transition: color 0.15s ease;
+	}
+
+	.footer-nav a:hover {
+		color: var(--accent);
+	}
+
+	.footer-copy {
+		margin: 0;
+		font-size: 0.8rem;
+		color: var(--text-secondary-dark);
+	}
+
+	@media (max-width: 720px) {
+		.footer-inner {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+			padding: 1.5rem 1.25rem;
+		}
+
+		.footer-nav {
+			order: 2;
+		}
+
+		.footer-copy {
+			order: 3;
+		}
+	}
 </style>
