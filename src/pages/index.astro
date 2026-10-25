@@ -4,81 +4,264 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const email = 'rosta.slechta@gmail.com';
-const mailSubject = encodeURIComponent('Spolupráce v testování');
+const mailSubject = encodeURIComponent('Probrat testování');
 
-const services = [
-	['01', 'Najdu, co se může pokazit', 'Projdu požadavky, rizika a reálné scénáře. Nepíšu testy pro každé tlačítko – stavím ty, které mají šanci zachytit skutečný problém.'],
-	['02', 'Rozbiju to dřív než uživatel', 'Manuálně i explorativně. Procházím happy path i cesty, na které nikdo nemyslel. Když to má spadnout, ať to spadne u mě.'],
-	['03', 'Automatizace, co běží sama', 'Playwright, API testy, CI/CD. Ne sada skriptů, kterou někdo spouští jednou za sprint – pipeline, která křičí hned, když se něco rozbije.'],
-	['04', 'Bug, kterému jde rozumět', 'Nestačí napsat „nefunguje“. Reprodukce, kontext, dopad. A ověření, že oprava opravdu opravila – ne že jen zmizela z boardu.'],
+const principles = [
+	{
+		title: 'Testování v kontextu celého systému',
+		text: 'Nejen jednotlivé obrazovky nebo endpointy. Zajímá mě, jak se části skládají a kde se předpoklady rozcházejí s realitou.',
+	},
+	{
+		title: 'Návaznost dat a integrace',
+		text: 'Chyby často vznikají na hranicích. Proto sleduju cestu dat mezi systémy, ne jen HTTP status.',
+	},
+	{
+		title: 'Automatizace s opakovatelnou hodnotou',
+		text: 'Automatizuju to, co má smysl hlídat znovu a znovu. Ne všechno, co jde napsat.',
+	},
 ];
 
 const areas = [
-	['Web — FE i BE', 'Od UI po backend. Funkční, integrační, regresní, E2E. Playwright jako základ, protože Selenium už patří do muzea.'],
-	['API a integrace', 'REST, SOAP, datové kontrakty, chybové stavy. Problém chycený na API je levnější než ten samý na obrazovce.'],
-	['CI/CD pipeline', 'Build, validace, artefakty, návaznosti. Testování uvnitř pipeline, ne až když „je čas na QA“.'],
-	['Java / .NET SDK', 'Klientské knihovny, integrace, edge case. To, co vypadá jako detail v SDK, dokáže shodit celou integraci.'],
+	{
+		title: 'Funkční testování webových aplikací',
+		text: 'Frontend i backend. Validace chování, stavů, oprávnění a toku dat. Od kliknutí po odpověď serveru.',
+		example: 'Tlačítko je zelené, ale backend ti tiše odmítne požadavek, který UI ani nezobrazí.',
+	},
+	{
+		title: 'API testing — REST a SOAP',
+		text: 'Kontakty, kontrakty, chybové stavy a obsah odpovědí. HTTP 200 není důkaz, že data dávají smysl.',
+		example: 'API může vracet 200 a přesto předat přesně ten problém, který nechceš.',
+	},
+	{
+		title: 'Integrační testování a návaznost dat',
+		text: 'Scénáře přes více systémů. Kde se data mění, ztrácejí nebo se systémy přestanou „znát“.',
+		example: 'Když se dva systémy domluví, je to integrace. Když se domluví správně, je to důvod k oslavě.',
+	},
+	{
+		title: 'Automatizované testy — Playwright a Mocha',
+		text: 'Stabilní E2E a API automatizace, která běží v pipeline a dává srozumitelný signál, ne šum.',
+		example: 'Zelená pipeline je příjemná. Důležité je, co vlastně ověřila.',
+	},
+	{
+		title: 'CI/CD pipeline a validace buildů',
+		text: 'Testy uvnitř procesu, ne až „až bude čas na QA“. Build, artefakty, návaznosti, regrese.',
+		example: 'Pipeline, která křičí hned, když se něco rozbije — ne až po releasu.',
+	},
+	{
+		title: 'Java / .NET SDK a integrační scénáře',
+		text: 'Klientské knihovny, edge case a to, co vypadá jako detail, ale umí shodit celou integraci.',
+		example: 'SDK, které „funguje u mě“, ale v produkčním toku ti tichounce ztratí jednu vazbu.',
+	},
 ];
 
 const steps = [
-	['01', 'Nejdřív pochopit', 'Co to dělá, pro koho, a kde to bolí, když to nefunguje. Bez toho jsou testy jen checklist.'],
-	['02', 'Pak mířit', 'Scénáře podle rizik a dopadu. Ne „otestovat všechno“ – otestovat to, co může ublížit.'],
-	['03', 'Pak to spustit', 'Manuál + automatizace. Co se opakuje, patří do pipeline. Co je jednorázové a chytré, patří do hlavý.'],
-	['04', 'Nakonec uzavřít', 'Jasný stav, reprodukovatelné bugy, ověřené opravy. Žádné „možná to někde je“.'],
+	{
+		num: '01',
+		title: 'Pochopit systém a očekávané chování',
+		text: 'Co to dělá, pro koho a kde to bolí, když to nefunguje. Bez toho jsou testy jen checklist.',
+	},
+	{
+		num: '02',
+		title: 'Identifikovat riziková místa',
+		text: 'Scénáře podle dopadu a pravděpodobnosti. Ne „otestovat všechno“ — otestovat to, co může ublížit.',
+	},
+	{
+		num: '03',
+		title: 'Ověřit funkčnost, integrace a data',
+		text: 'Manuálně i automatizovaně. Sledovat cestu požadavku i to, co se s daty stane dál.',
+	},
+	{
+		num: '04',
+		title: 'Vybrat vhodné scénáře pro automatizaci',
+		text: 'To, co se opakuje a má hodnotu hlídat. Automatizace nenahrazuje pochopení systému.',
+	},
+	{
+		num: '05',
+		title: 'Opakovaně ověřovat při změnách',
+		text: 'Regrese s cílem vědět, v jakém stavu aplikace je — a snížit šanci, že první najde chybu zákazník.',
+	},
 ];
 ---
 
 <!doctype html>
 <html lang="cs">
 	<head>
-		<BaseHead title="Rostislav Šlechta | Quality Engineer" description="Najdu bug dřív, než ho najde produkce. Quality Engineering pro web, API a CI/CD — Playwright, risk-based, bez zbytečného divadla." />
+		<BaseHead
+			title="Rosta Šlechta | Softwarové testování, API a integrace"
+			description="Softwarové testování webových aplikací, API, integrací a CI/CD. Praktický přístup k funkčnosti, návaznosti dat a automatizaci testů. Bez zbytečného divadla."
+		/>
 	</head>
 	<body>
 		<Header />
 		<main>
+			<!-- HERO -->
 			<section class="hero" id="uvod" aria-labelledby="hero-title">
-				<div class="hero-copy">
-					<p class="eyebrow">ROSTISLAV ŠLECHTA · QUALITY ENGINEER</p>
-					<h1 id="hero-title">Najdu bug dřív, než ho najde produkce.</h1>
-					<p class="intro">Testuju software v prostředí, kde chyba není „jen bug“ – je to riziko. Stavím scénáře podle toho, co může ublížit, automatizaci tak, aby běžela sama, a reporty tak, aby jim šlo rozumět. Bez checklistů pro checklisty.</p>
-					<p class="scope">Web · API · Playwright · CI/CD · bankovní realita</p>
-					<div class="actions"><a class="button button-primary" href={`mailto:${email}?subject=${mailSubject}`}>Napište, co se má pokazit <span aria-hidden="true">→</span></a><a class="button button-secondary" href="#sluzby">Co umím</a></div>
-				</div>
-				<div class="hero-photo">
-					<img src="/rostislav-slechta.webp" alt="Rostislav Šlechta" width="840" height="1050" decoding="async" />
-				</div>
-			</section>
+				<div class="hero-grid">
+					<div class="hero-copy">
+						<p class="eyebrow">SOFTWARE TESTING. BEZ DIVADLA.</p>
+						<h1 id="hero-title">Software má fungovat. I když se systémy přestanou tvářit, že se znají.</h1>
+						<p class="intro">
+							Jsem Rosta. Testuju webové aplikace, API, integrace a CI/CD. Od kliknutí na tlačítko až po zprávu, která se někde cestou rozhodla zmizet.
+						</p>
+						<p class="claim">Protože „u mě to funguje“ není testovací strategie.</p>
+						<div class="actions">
+							<a class="btn btn-primary" href={`mailto:${email}?subject=${mailSubject}`}>
+								Probrat testování
+								<span aria-hidden="true">→</span>
+							</a>
+							<a class="btn btn-ghost" href="#co-testuju">Co testuju</a>
+						</div>
+					</div>
 
-			<section class="section services" id="sluzby" aria-labelledby="services-title">
-				<div class="section-heading"><p class="eyebrow">CO UMÍM</p><h2 id="services-title">Čtyři věci. Žádné buzzword menu.</h2><p>Neslibuju, že otestuju „všechno“. Slibuju, že budu mířit tam, kde to má smysl – a že výsledek půjde použít, ne jen archivovat.</p></div>
-				<div class="service-grid">{services.map(([number, title, text]) => <article class="service-card"><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
-			</section>
-
-			<section class="section areas" id="oblasti" aria-labelledby="areas-title">
-				<div class="section-heading"><p class="eyebrow">KDE TO DĚLÁM</p><h2 id="areas-title">Od tlačítka až po pipeline.</h2></div>
-				<div class="area-grid">{areas.map(([title, text]) => <article class="area-card"><div class="card-mark" aria-hidden="true"></div><h3>{title}</h3><p>{text}</p></article>)}</div>
-			</section>
-
-			<section class="section approach" id="pristup" aria-labelledby="approach-title">
-				<div class="section-heading"><p class="eyebrow">JAK TO FUNGUJE</p><h2 id="approach-title">Míň divadla. Víc signálu.</h2><p>Green build není zelená pro uživatele. Proto netestuju „na objem“ – testuju na riziko a dopad.</p></div>
-				<ol class="steps">{steps.map(([number, title, text]) => <li><span>{number}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol>
-				<p class="outcome">Cíl je jednoduchý: vědět, v jakém stavu aplikace je, a snížit šanci, že první, kdo najde chybu, bude zákazník.</p>
-			</section>
-
-			<section class="section about" id="o-mne" aria-labelledby="about-title">
-				<div class="about-inner">
-					<div class="section-heading"><p class="eyebrow">O MNĚ</p><h2 id="about-title">Rostislav Šlechta</h2></div>
-					<div class="about-copy">
-						<p>Quality Engineer v bankovním prostředí. Web, API, integrace, pipeline. Místa, kde „ono to někdy spadne“ není vtip.</p>
-						<p>Pracuju risk-based: nejdřív zjistím, co se může pokazit a proč na tom záleží. Pak to otestuju – manuálně, automatizovaně, v CI/CD. Playwright, Postman, JMeter, Java/.NET SDK. AI použiju, když zrychlí návrh nebo prioritizaci. Nepoužiju ji jako výmluvu za povrchní práci.</p>
-						<p><strong>Bug nestačí najít. Musí se dát zopakovat, pochopit a ověřit, že je pryč.</strong></p>
+					<div class="hero-panel" aria-hidden="true">
+						<div class="panel-header">
+							<span class="panel-dot panel-dot-fail"></span>
+							<span class="panel-dot panel-dot-warn"></span>
+							<span class="panel-dot panel-dot-ok"></span>
+							<span class="panel-label">test run · integration</span>
+						</div>
+						<div class="panel-body">
+							<div class="flow-step">
+								<span class="flow-badge">UI</span>
+								<span class="flow-text">klik · formulář · validace</span>
+								<span class="flow-status ok">pass</span>
+							</div>
+							<div class="flow-connector"></div>
+							<div class="flow-step">
+								<span class="flow-badge">API</span>
+								<span class="flow-text">POST /orders · 200 OK</span>
+								<span class="flow-status ok">pass</span>
+							</div>
+							<div class="flow-connector"></div>
+							<div class="flow-step highlight">
+								<span class="flow-badge">DATA</span>
+								<span class="flow-text">payload → systém B</span>
+								<span class="flow-status fail">mismatch</span>
+							</div>
+							<div class="flow-connector"></div>
+							<div class="flow-step">
+								<span class="flow-badge">SDK</span>
+								<span class="flow-text">klientská knihovna</span>
+								<span class="flow-status skip">skipped</span>
+							</div>
+						</div>
+						<div class="panel-footer">
+							<span class="panel-meta">3/4 passed</span>
+							<span class="panel-meta accent">1 data contract failed</span>
+						</div>
 					</div>
 				</div>
 			</section>
 
-			<section class="contact" id="kontakt" aria-labelledby="contact-title">
-				<div><p class="eyebrow">KONTAKT</p><h2 id="contact-title">Máte aplikaci. Máte tempo. Chcete jistotu?</h2><p>Nová funkcionalita, automatizace do pipeline, přehled o kvalitě před releasem. Napište – řekneme si, co má smysl testovat a co ne.</p></div>
-				<a class="button button-dark" href={`mailto:${email}?subject=${mailSubject}`}>Ozvat se <span aria-hidden="true">→</span></a>
+			<!-- VALUE -->
+			<section class="section value" id="hodnota" aria-labelledby="value-title">
+				<div class="section-inner">
+					<div class="value-intro">
+						<p class="eyebrow light">PROČ TO DĚLÁM</p>
+						<h2 id="value-title">Nejde o to mít co nejvíc testů.</h2>
+						<p class="lead">
+							Jde o to vědět, co se může pokazit, kde to poznáme a jak zabránit tomu, aby se stejný problém vrátil.
+						</p>
+					</div>
+					<div class="principle-grid">
+						{principles.map((p, i) => (
+							<article class="principle-card">
+								<span class="principle-num">{String(i + 1).padStart(2, '0')}</span>
+								<h3>{p.title}</h3>
+								<p>{p.text}</p>
+							</article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- AREAS / SERVICES -->
+			<section class="section areas" id="co-testuju" aria-labelledby="areas-title">
+				<div class="section-inner">
+					<div class="section-heading">
+						<p class="eyebrow light">CO TESTUJU</p>
+						<h2 id="areas-title">Od tlačítka až po to, co se stane s daty dál.</h2>
+						<p class="section-desc">
+							Jednotlivé oblasti na sebe navazují. Cílem není sedm izolovaných služeb, ale důvěra v chování celého systému.
+						</p>
+					</div>
+					<div class="area-grid">
+						{areas.map((a) => (
+							<article class="area-card">
+								<div class="area-mark" aria-hidden="true"></div>
+								<h3>{a.title}</h3>
+								<p>{a.text}</p>
+								<p class="area-example">
+									<span class="example-label">Příklad</span>
+									{a.example}
+								</p>
+							</article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- HOW I WORK -->
+			<section class="section approach" id="jak-pracuju" aria-labelledby="approach-title">
+				<div class="section-inner approach-grid">
+					<div class="approach-intro">
+						<p class="eyebrow">JAK PRACUJU</p>
+						<h2 id="approach-title">Neautomatizuju všechno.</h2>
+						<p class="lead-dark">
+							Automatizuju to, co má smysl hlídat opakovaně. Počet testů sám o sobě není měřítkem kvality — a automatizace nenahrazuje pochopení systému.
+						</p>
+					</div>
+					<ol class="steps">
+						{steps.map((s) => (
+							<li>
+								<span class="step-num">{s.num}</span>
+								<div>
+									<h3>{s.title}</h3>
+									<p>{s.text}</p>
+								</div>
+							</li>
+						))}
+					</ol>
+				</div>
+			</section>
+
+			<!-- ABOUT -->
+			<section class="section about" id="o-mne" aria-labelledby="about-title">
+				<div class="section-inner about-inner">
+					<p class="eyebrow light">O MNĚ</p>
+					<h2 id="about-title">Rosta Šlechta</h2>
+					<div class="about-copy">
+						<p>
+							Baví mě hledat místa, kde se předpoklady systému potkávají s realitou. Obvykle to bývá zajímavější než samotné tlačítko, na které se kliká.
+						</p>
+						<p>
+							Pohybuju se v technických detailech webových aplikací, API a integrací. Zajímá mě chování systému jako celku — a to, že problémy často vznikají na hranicích mezi komponentami, ne uprostřed jedné obrazovky.
+						</p>
+						<p>
+							Komunikuju srozumitelně s vývojem. Cíl není jen najít chybu, ale ji spolehlivě reprodukovat, pochopit dopad a ověřit, že oprava opravdu opravila.
+						</p>
+						<p class="about-punch">
+							„U mě to funguje“ není testovací strategie. A zelená pipeline je příjemná — důležité je, co vlastně ověřila.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- CTA -->
+			<section class="section contact" id="kontakt" aria-labelledby="contact-title">
+				<div class="contact-inner">
+					<div class="contact-copy">
+						<p class="eyebrow">KONTAKT</p>
+						<h2 id="contact-title">Máte systém, kterému chcete víc věřit?</h2>
+						<p>
+							Pojďme se podívat, co testovat, kde hledat rizika a co má smysl automatizovat. Bez zbytečného divadla.
+						</p>
+					</div>
+					<a class="btn btn-primary btn-lg" href={`mailto:${email}?subject=${mailSubject}`}>
+						Ozvat se Rostovi
+						<span aria-hidden="true">→</span>
+					</a>
+				</div>
 			</section>
 		</main>
 		<Footer />
@@ -86,19 +269,560 @@ const steps = [
 </html>
 
 <style>
-	main { width: 100%; max-width: none; padding: 0 0 5rem; }
-	.hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(260px, .55fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); min-height: 640px; padding: clamp(4rem, 8vw, 6.5rem) max(1.5rem, calc((100vw - 1120px) / 2)); color: var(--white); background: var(--primary-dark); }
-	.eyebrow { margin: 0 0 .9rem; color: var(--accent); font-size: .75rem; font-weight: 600; letter-spacing: .1em; }
-	h1, h2 { letter-spacing: -.04em; } h1 { max-width: 720px; margin: 0; color: var(--white); font-size: clamp(2.5rem, 4.8vw, 3.35rem); line-height: 1.12; } h2 { max-width: 790px; margin: 0; color: var(--primary-dark); font-size: clamp(2rem, 3vw, 2.5rem); line-height: 1.2; }
-	.intro { max-width: 640px; margin: 1.4rem 0 0; color: var(--gray-200); font-size: 1rem; line-height: 1.75; }.scope { margin: 1.25rem 0 0; color: var(--white); font-size: .875rem; font-weight: 600; letter-spacing: .02em; }
-	.actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }.button { display: inline-flex; align-items: center; justify-content: center; gap: .8rem; padding: .75rem 1.15rem; border: 1px solid transparent; border-radius: 999px; font-size: .875rem; font-weight: 600; text-decoration: none; transition: background .16s ease, border-color .16s ease, transform .16s ease; }.button:hover { transform: translateY(-1px); }.button-primary { color: var(--primary-dark); background: var(--accent); }.button-primary:hover { color: var(--primary-dark); background: var(--accent); filter: brightness(.94); }.button-secondary { border-color: rgba(255,255,255,.45); color: var(--white); background: transparent; }.button-secondary:hover { border-color: var(--accent); color: var(--white); }
-	.hero-photo { justify-self: end; width: min(100%, 340px); }.hero-photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 32%; border-radius: 12px; border: 1px solid rgba(255,255,255,.18); box-shadow: 0 20px 50px rgba(0,0,0,.35); }
-	.section { width: min(100% - 3rem, 1120px); margin: 0 auto; padding: 5rem 0; border-top: 1px solid var(--line); scroll-margin-top: 2rem; }.section-heading > p:last-child { max-width: 690px; margin: 1rem 0 0; color: var(--muted); font-size: 1rem; line-height: 1.75; }.section .eyebrow { color: var(--primary-dark); }.service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.5rem; }.service-card { padding: 1.5rem; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }.service-card > span { color: var(--primary-dark); font-size: .75rem; font-weight: 600; letter-spacing: .1em; }.service-card h3, .area-card h3, .steps h3 { margin: 1.2rem 0 .55rem; color: var(--primary-dark); font-size: 1.55rem; letter-spacing: -.025em; line-height: 1.3; }.service-card p, .area-card p, .steps p { margin: 0; color: var(--gray-600); font-size: .875rem; line-height: 1.7; }
-	.area-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.5rem; }.area-card { min-height: 200px; padding: 1.5rem; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }.card-mark { width: 2.2rem; height: .25rem; border-radius: 999px; background: var(--accent); }.area-card h3 { margin-top: 1.35rem; }
-	.approach { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(2rem, 7vw, 7rem); align-items: start; padding: 3rem; border: 1px solid var(--gray-200); border-radius: 8px; background: var(--gray-200); }.approach .eyebrow { color: var(--primary-dark); }.steps { display: grid; gap: 1rem; padding: 0; margin: 0; list-style: none; }.steps li { display: grid; grid-template-columns: 2.4rem 1fr; gap: 1rem; padding-bottom: 1.1rem; border-bottom: 1px solid #cbd0d7; }.steps li > span { color: #13752a; font-size: .75rem; font-weight: 600; }.steps h3 { margin: 0 0 .35rem; }.outcome { grid-column: 2; max-width: 630px; margin: 0; padding: 1.1rem 0 0; color: var(--gray-900); font-size: .9375rem; font-weight: 600; line-height: 1.7; }
-	.about { border-top: 1px solid var(--line); }.about-inner { max-width: 720px; }.about-copy p { margin: 0 0 1.1rem; color: var(--gray-600); line-height: 1.75; }.about-copy strong { color: var(--primary-dark); }
-	.contact { width: min(100% - 3rem, 1120px); margin: 0 auto; display: flex; align-items: end; justify-content: space-between; gap: 2rem; padding: clamp(2rem, 5vw, 4rem); border-radius: 8px; color: var(--white); background: var(--primary-dark); scroll-margin-top: 2rem; }.contact .eyebrow { color: var(--accent); }.contact h2 { color: var(--white); }.contact p:last-child { max-width: 680px; margin: 1rem 0 0; color: var(--gray-200); line-height: 1.7; }.button-dark { flex: 0 0 auto; color: var(--primary-dark); background: var(--accent); }.button-dark:hover { color: var(--primary-dark); background: var(--accent); filter: brightness(.94); }
-	@media (max-width: 880px) { .hero, .approach { grid-template-columns: 1fr; }.hero { min-height: 0; }.hero-photo { justify-self: start; width: min(100%, 280px); order: -1; }.service-grid { grid-template-columns: repeat(2, 1fr); }.outcome { grid-column: auto; } }
-	@media (max-width: 720px) { .service-card h3, .area-card h3, .steps h3 { font-size: 1.3rem; } }
-	@media (max-width: 620px) { .hero { padding: 3.5rem 1rem 4rem; }.section { width: min(100% - 2rem, 1120px); padding: 4rem 0; }.service-grid, .area-grid { grid-template-columns: 1fr; }.approach { padding: 1.5rem; }.contact { width: min(100% - 2rem, 1120px); align-items: flex-start; flex-direction: column; }.button-dark { width: 100%; }.scope { line-height: 1.8; } }
+	/* ---------- shared ---------- */
+	.section {
+		scroll-margin-top: 4.5rem;
+	}
+
+	.section-inner {
+		width: min(100% - 2.5rem, 1120px);
+		margin: 0 auto;
+	}
+
+	.eyebrow {
+		margin: 0 0 0.85rem;
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--accent);
+	}
+
+	.eyebrow.light {
+		color: var(--accent);
+	}
+
+	.lead {
+		max-width: 36rem;
+		margin: 1rem 0 0;
+		color: var(--text-secondary-dark);
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+
+	.lead-dark {
+		max-width: 28rem;
+		margin: 1rem 0 0;
+		color: var(--text-muted-light);
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+
+	.section-desc {
+		max-width: 38rem;
+		margin: 1rem 0 0;
+		color: var(--text-secondary-dark);
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.55rem;
+		padding: 0.8rem 1.35rem;
+		border: 1px solid transparent;
+		border-radius: 999px;
+		font-size: 0.9rem;
+		font-weight: 600;
+		text-decoration: none;
+		transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease, filter 0.15s ease;
+		cursor: pointer;
+	}
+
+	.btn:hover {
+		transform: translateY(-1px);
+	}
+
+	.btn-primary {
+		background: var(--accent);
+		color: var(--bg);
+	}
+
+	.btn-primary:hover {
+		filter: brightness(1.06);
+		color: var(--bg);
+	}
+
+	.btn-ghost {
+		border-color: rgba(244, 247, 242, 0.28);
+		color: var(--text-on-dark);
+		background: transparent;
+	}
+
+	.btn-ghost:hover {
+		border-color: var(--accent);
+		color: var(--text-on-dark);
+	}
+
+	.btn-lg {
+		padding: 0.95rem 1.6rem;
+		font-size: 0.95rem;
+	}
+
+	/* ---------- HERO ---------- */
+	.hero {
+		position: relative;
+		padding: clamp(3.5rem, 8vw, 6rem) 0 clamp(4rem, 9vw, 7rem);
+		background:
+			radial-gradient(ellipse 80% 60% at 70% 20%, rgba(184, 243, 107, 0.07), transparent 55%),
+			var(--bg);
+		overflow: hidden;
+	}
+
+	.hero-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+		align-items: center;
+		gap: clamp(2rem, 5vw, 4rem);
+		width: min(100% - 2.5rem, 1120px);
+		margin: 0 auto;
+	}
+
+	.hero-copy h1 {
+		max-width: 18ch;
+		margin: 0;
+		color: var(--text-on-dark);
+		font-size: clamp(2.15rem, 4.2vw, 3.15rem);
+		line-height: 1.12;
+	}
+
+	.intro {
+		max-width: 36rem;
+		margin: 1.35rem 0 0;
+		color: var(--text-secondary-dark);
+		font-size: 1.05rem;
+		line-height: 1.7;
+	}
+
+	.claim {
+		margin: 1.15rem 0 0;
+		color: var(--accent);
+		font-size: 0.95rem;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+	}
+
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin-top: 2rem;
+	}
+
+	/* Hero technical panel */
+	.hero-panel {
+		background: var(--surface);
+		border: 1px solid var(--line-dark);
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: var(--shadow);
+		font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace;
+		font-size: 0.78rem;
+	}
+
+	.panel-header {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.7rem 1rem;
+		background: var(--surface-2);
+		border-bottom: 1px solid var(--line-dark);
+	}
+
+	.panel-dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+	}
+
+	.panel-dot-fail { background: #e85d5d; }
+	.panel-dot-warn { background: #e8c45d; }
+	.panel-dot-ok { background: var(--accent); }
+
+	.panel-label {
+		margin-left: 0.5rem;
+		color: var(--text-secondary-dark);
+		letter-spacing: 0.04em;
+	}
+
+	.panel-body {
+		padding: 1.1rem 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.flow-step {
+		display: grid;
+		grid-template-columns: 3.2rem 1fr auto;
+		align-items: center;
+		gap: 0.65rem;
+		padding: 0.55rem 0.65rem;
+		border-radius: 6px;
+		background: rgba(0, 0, 0, 0.18);
+	}
+
+	.flow-step.highlight {
+		background: rgba(232, 93, 93, 0.12);
+		outline: 1px solid rgba(232, 93, 93, 0.35);
+	}
+
+	.flow-badge {
+		font-weight: 700;
+		font-size: 0.68rem;
+		letter-spacing: 0.06em;
+		color: var(--accent);
+	}
+
+	.flow-text {
+		color: var(--text-secondary-dark);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.flow-status {
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	.flow-status.ok { color: var(--accent); }
+	.flow-status.fail { color: #e85d5d; }
+	.flow-status.skip { color: var(--text-secondary-dark); opacity: 0.7; }
+
+	.flow-connector {
+		width: 1px;
+		height: 12px;
+		margin-left: 1.9rem;
+		background: var(--line-dark);
+	}
+
+	.panel-footer {
+		display: flex;
+		justify-content: space-between;
+		gap: 0.75rem;
+		padding: 0.65rem 1rem;
+		border-top: 1px solid var(--line-dark);
+		background: var(--surface-2);
+	}
+
+	.panel-meta {
+		color: var(--text-secondary-dark);
+		font-size: 0.7rem;
+	}
+
+	.panel-meta.accent {
+		color: #e85d5d;
+		font-weight: 600;
+	}
+
+	/* ---------- VALUE ---------- */
+	.value {
+		padding: clamp(4rem, 8vw, 6rem) 0;
+		background: var(--bg);
+		border-top: 1px solid var(--line-dark);
+	}
+
+	.value h2 {
+		max-width: 18ch;
+		color: var(--text-on-dark);
+	}
+
+	.principle-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+		margin-top: 2.5rem;
+	}
+
+	.principle-card {
+		padding: 1.4rem 1.35rem;
+		background: var(--surface);
+		border: 1px solid var(--line-dark);
+		border-radius: 10px;
+		transition: border-color 0.15s ease;
+	}
+
+	.principle-card:hover {
+		border-color: rgba(184, 243, 107, 0.28);
+	}
+
+	.principle-num {
+		display: block;
+		margin-bottom: 0.9rem;
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		color: var(--accent);
+		font-family: ui-monospace, monospace;
+	}
+
+	.principle-card h3 {
+		margin: 0 0 0.55rem;
+		font-size: 1.05rem;
+		color: var(--text-on-dark);
+	}
+
+	.principle-card p {
+		margin: 0;
+		font-size: 0.9rem;
+		color: var(--text-secondary-dark);
+		line-height: 1.65;
+	}
+
+	/* ---------- AREAS ---------- */
+	.areas {
+		padding: clamp(4rem, 8vw, 6rem) 0;
+		background: var(--surface);
+		border-top: 1px solid var(--line-dark);
+	}
+
+	.areas h2 {
+		color: var(--text-on-dark);
+		max-width: 22ch;
+	}
+
+	.area-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		margin-top: 2.5rem;
+	}
+
+	.area-card {
+		padding: 1.5rem 1.4rem;
+		background: var(--bg);
+		border: 1px solid var(--line-dark);
+		border-radius: 10px;
+		transition: border-color 0.15s ease, transform 0.15s ease;
+	}
+
+	.area-card:hover {
+		border-color: rgba(184, 243, 107, 0.25);
+		transform: translateY(-2px);
+	}
+
+	.area-mark {
+		width: 2rem;
+		height: 3px;
+		border-radius: 999px;
+		background: var(--accent);
+		margin-bottom: 1.15rem;
+	}
+
+	.area-card h3 {
+		margin: 0 0 0.6rem;
+		font-size: 1.1rem;
+		color: var(--text-on-dark);
+	}
+
+	.area-card > p {
+		margin: 0 0 1rem;
+		font-size: 0.9rem;
+		color: var(--text-secondary-dark);
+		line-height: 1.65;
+	}
+
+	.area-example {
+		margin: 0 !important;
+		padding-top: 0.9rem;
+		border-top: 1px solid var(--line-dark);
+		font-size: 0.82rem !important;
+		color: var(--text-secondary-dark) !important;
+		line-height: 1.55 !important;
+		font-style: italic;
+	}
+
+	.example-label {
+		display: block;
+		margin-bottom: 0.25rem;
+		font-style: normal;
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--accent);
+	}
+
+	/* ---------- APPROACH ---------- */
+	.approach {
+		padding: clamp(4rem, 8vw, 6rem) 0;
+		background: var(--light-bg);
+		color: var(--text-on-light);
+	}
+
+	.approach .eyebrow {
+		color: var(--text-muted-light);
+	}
+
+	.approach h2 {
+		color: var(--text-on-light);
+		max-width: 14ch;
+	}
+
+	.approach-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+		gap: clamp(2rem, 6vw, 4.5rem);
+		align-items: start;
+	}
+
+	.steps {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.steps li {
+		display: grid;
+		grid-template-columns: 2.6rem 1fr;
+		gap: 1rem;
+		padding: 1.15rem 0;
+		border-bottom: 1px solid var(--line-light);
+	}
+
+	.steps li:first-child {
+		padding-top: 0;
+	}
+
+	.steps li:last-child {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+
+	.step-num {
+		font-family: ui-monospace, monospace;
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		color: #2d6a3a;
+		padding-top: 0.2rem;
+	}
+
+	.steps h3 {
+		margin: 0 0 0.3rem;
+		font-size: 1.05rem;
+		color: var(--text-on-light);
+	}
+
+	.steps p {
+		margin: 0;
+		font-size: 0.9rem;
+		color: var(--text-muted-light);
+		line-height: 1.6;
+	}
+
+	/* ---------- ABOUT ---------- */
+	.about {
+		padding: clamp(4rem, 8vw, 6rem) 0;
+		background: var(--bg);
+		border-top: 1px solid var(--line-dark);
+	}
+
+	.about-inner {
+		max-width: 40rem;
+	}
+
+	.about h2 {
+		color: var(--text-on-dark);
+		margin-bottom: 1.5rem;
+	}
+
+	.about-copy p {
+		margin: 0 0 1.15rem;
+		color: var(--text-secondary-dark);
+		font-size: 1.02rem;
+		line-height: 1.75;
+	}
+
+	.about-punch {
+		margin-top: 1.5rem !important;
+		padding: 1.15rem 1.25rem;
+		background: var(--surface);
+		border-left: 3px solid var(--accent);
+		border-radius: 0 8px 8px 0;
+		color: var(--text-on-dark) !important;
+		font-weight: 500;
+	}
+
+	/* ---------- CONTACT ---------- */
+	.contact {
+		padding: clamp(3.5rem, 7vw, 5rem) 0;
+		background: var(--surface);
+		border-top: 1px solid var(--line-dark);
+	}
+
+	.contact-inner {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 2rem;
+		width: min(100% - 2.5rem, 1120px);
+		margin: 0 auto;
+		padding: clamp(2rem, 4vw, 2.75rem);
+		background: var(--bg);
+		border: 1px solid var(--line-dark);
+		border-radius: 12px;
+	}
+
+	.contact-copy h2 {
+		max-width: 16ch;
+		color: var(--text-on-dark);
+	}
+
+	.contact-copy p:last-of-type {
+		max-width: 32rem;
+		margin: 1rem 0 0;
+		color: var(--text-secondary-dark);
+		line-height: 1.7;
+	}
+
+	/* ---------- RESPONSIVE ---------- */
+	@media (max-width: 900px) {
+		.hero-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.hero-panel {
+			max-width: 420px;
+		}
+
+		.principle-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.approach-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.contact-inner {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.area-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.hero-copy h1 {
+			max-width: none;
+		}
+
+		.btn-lg {
+			width: 100%;
+		}
+
+		.contact-inner {
+			padding: 1.5rem;
+		}
+	}
 </style>
